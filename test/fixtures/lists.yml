@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  expense: 1
+  place: MyString
+  item-name: MyString
+  date: 2020-02-10
+  user: one
+
+two:
+  expense: 1
+  place: MyString
+  item-name: MyString
+  date: 2020-02-10
+  user: two
