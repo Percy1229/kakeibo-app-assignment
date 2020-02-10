@@ -1,3 +1,8 @@
+<% if logged_in? %>
+    <p>ログイン完了ユーザ:
+    <%= current_user.name %> 
+    </p>
+<% else %>
 <div>
     <div class="text-center">
         <h1>English Kakiebo</h1>
@@ -5,3 +10,4 @@
         <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
     </div>
 </div>
+<% end %>
