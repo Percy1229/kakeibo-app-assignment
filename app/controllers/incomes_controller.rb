@@ -10,6 +10,13 @@ class IncomesController < ApplicationController
 
   def create
     @income = current_user.incomes.build(income_params)
+    if @income.save
+      flash[:success] = 'added successfully'
+      redirect_to root_url
+    else
+      flash[:danger] = 'Failed to add'
+      render :new
+    end
   end
   
   def edit
