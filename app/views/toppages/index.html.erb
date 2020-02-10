@@ -1,5 +1,5 @@
 <% if logged_in? %>
-    <%= render 'lists/lists', lists: @lists %>
+    <%= render 'lists/lists', lists: @lists, list: @list %>
 <% else %>
 <div>
     <div class="text-center">

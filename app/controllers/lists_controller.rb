@@ -1,4 +1,7 @@
 class ListsController < ApplicationController
+  before_action :require_user_logged_in
+  before_action :correct_user, only: [:destroy]
+  
   def new
     if logged_in?
       @list = current_user.lists.build
@@ -17,7 +20,7 @@ class ListsController < ApplicationController
   end
 
   def edit
-    @lists = current_user.lists.find(params[:id])
+    @list = current_user.lists.find(params[:id])
   end
 
   def update
@@ -40,5 +43,12 @@ class ListsController < ApplicationController
   private 
   def list_params
     params.require(:list).permit(:expense, :place, :item_name, :date)
+  end
+  
+  def correct_user 
+    @list = current_user.lists.find_by(id: params[:id]) 
+    unless @list
+    redirect_to root_url
+    end
   end
 end

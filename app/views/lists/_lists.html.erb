@@ -25,9 +25,10 @@
                 <%= list.place %>
             </td>
             <td>
-                
+                <%= link_to "Edit", edit_list_path(list), class: 'btn btn-primary btn-sm' %>
             </td>
             <td>
+                <%= link_to "Delete", list, method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger btn-sm' %>
             </td>
             <% end %>
         </tr>
