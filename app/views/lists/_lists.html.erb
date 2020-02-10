@@ -10,8 +10,8 @@
         </tr>
     </thead>
     <tbody>
+        <% lists.each do |list| %>
         <tr>
-            <% lists.each do |list| %>
             <td>
                 <%= list.date %>
             </td>
@@ -30,7 +30,10 @@
             <td>
                 <%= link_to "Delete", list, method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger btn-sm' %>
             </td>
-            <% end %>
         </tr>
+         <% end %>
     </tbody>
 </table>
+ <div>
+        <p>Total: ¥<%= total %></p>
+    </div>
