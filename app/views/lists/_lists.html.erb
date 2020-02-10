@@ -1,7 +1,35 @@
-<ul>
-    <% lists.each do |list| %>
-    <li>
-        <%= list.item_name %>
-    </li>
-    <% end %>
-</ul>
+<table border=1>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Item</th>
+            <th>Expense</th>
+            <th>Place</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <% lists.each do |list| %>
+            <td>
+                <%= list.date %>
+            </td>
+             <td>
+                <%= list.item_name %>
+            </td>
+             <td>
+                <span>¥</span><%= list.expense %>
+            </td>
+             <td>
+                <%= list.place %>
+            </td>
+            <td>
+                
+            </td>
+            <td>
+            </td>
+            <% end %>
+        </tr>
+    </tbody>
+</table>

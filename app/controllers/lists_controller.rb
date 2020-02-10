@@ -8,7 +8,7 @@ class ListsController < ApplicationController
   def create
     @list = current_user.lists.build(list_params)
     if @list.save
-      flash[:success] = 'Expense added successfully'
+      flash[:success] = 'added successfully'
       redirect_to root_url
     else
       flash[:danger] = 'Failed to add'
@@ -39,7 +39,6 @@ class ListsController < ApplicationController
   
   private 
   def list_params
-    @list = current_user.lists.find_by(id: params[:id])
-    redirect_to signin_url unless @list
+    params.require(:list).permit(:expense, :place, :item_name, :date)
   end
 end

@@ -9,7 +9,7 @@
       <ul class="navbar-nav">
 <% if logged_in? %>
        <li class="nav-item">
-          <%= link_to 'Home', root_url, class: 'nav-link' %>
+          <%= link_to 'Post', lists_new_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
           <%= link_to 'Logout', logout_path, method: :delete, class: 'nav-link' %>
