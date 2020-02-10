@@ -2,6 +2,10 @@ class IncomesController < ApplicationController
   before_action :require_user_logged_in
   before_action :correct_user, only: [:destroy];
   
+  def checker
+    @incomes = current_user.incomes.order(id: :desc).page(params[:page])
+  end
+  
   def new
     if logged_in?
       @income = current_user.incomes.build
