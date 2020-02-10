@@ -47,8 +47,6 @@ class ListsController < ApplicationController
   
   def correct_user 
     @list = current_user.lists.find_by(id: params[:id]) 
-    unless @list
-    redirect_to root_url
-    end
+    redirect_to root_url unless @list
   end
 end

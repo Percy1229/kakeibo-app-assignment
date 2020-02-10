@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
+
   root to: 'toppages#index'
-  
-  #アイテムのCRUD
-  get 'lists/new'
-  post 'lists/create'
-  get 'lists/edit'
-  post 'lists/update'
-  delete 'lists/destroy'
   
   #ユーザのログイン・ログアウト
   get 'sessions/new'
@@ -20,5 +14,9 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   resources :users, only: [:show, :new, :create]
   
+  # #費用のCRUD
   resources :lists, only: [:new, :create, :edit, :update, :destroy]
+  
+   # #収入のCRUD
+  resources :incomes, only: [:new, :create, :edit, :update, :destroy]
 end
