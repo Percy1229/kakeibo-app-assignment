@@ -1,0 +1,37 @@
+<div class="container center">
+    <table border=1>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Source of Income</th>
+            <th>Income</th>
+            <th>Edit & Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% incomes.each do |income| %>
+        <tr>
+            <td>
+                <%= income.date %>
+
+            </td>
+             <td>
+                <%= income.source %>
+            </td>
+             <td>
+                <span>¥</span><%= income.income %>
+            </td>
+            <td>
+                <%= link_to "Edit", edit_income_path(income), class: 'btn btn-primary btn-sm' %>
+                <%= link_to "Delete", income, method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-danger btn-sm' %>
+            </td>
+        </tr>
+         <% end %>
+    </tbody>
+</table>
+<div>
+    <p>Total Income: ¥<%= income_total %></p>
+</div>
+    <%= paginate incomes %>
+
+</div>

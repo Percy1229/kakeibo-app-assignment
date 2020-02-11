@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   
   get 'incomes/checker'
   
+  get 'toppages/income'
+  get 'toppages/expense'
+  
   #ユーザの作成
   get 'signup', to: 'users#new'
   resources :users, only: [:show, :new, :create]
