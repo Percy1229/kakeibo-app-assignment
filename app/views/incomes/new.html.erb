@@ -4,6 +4,7 @@
 <div class="col-sm-6 offset-sm-3">
 <h1 class="pt-4 pb-2">Income</h1>
 <%= form_with(model: @income, local: true) do |f| %>
+<%= render 'layouts/error_messages', model: f.object %>
 
 <div class="form-group">
     <%= f.label :date, 'Date' %>
