@@ -1,6 +1,6 @@
 class IncomesController < ApplicationController
   before_action :require_user_logged_in
-  before_action :correct_user, only: [:destroy];
+  before_action :correct_user, only: [:destroy, :update]
   require "date"
   
    #収入のCRUD
@@ -18,11 +18,6 @@ class IncomesController < ApplicationController
       @result_with_period = @all_money.to_s(:delimited) #カンマを入れる -> 100,000
       
       #これから稼ぎそうなお金　ボタン押すと計算してオーバーするか教えてくれる(追加予定？)
-
-      
-      #いくらで超えるか(追加予定？)
-      
-      
       
       #103万円 - 稼いだお金(今年) = reseult
       @total = 0;
@@ -35,11 +30,11 @@ class IncomesController < ApplicationController
       
       #結果に応じてメッセージを表示させる
       if @result <= 0  
-        @comment = "Sorry, your income has already been over"
+        @comment = 'Sorry, your income has already been over.'
       elsif @result <= 100000
-        @comment = "Your income almost reaches to 1,030,000. You should arrange your job."
+        @comment = 'Your income almost reaches to 1,030,000. You should arrange your job.'
       else 
-        @comment = "Your income is safe. Good job."
+        @comment = 'Your income is safe. Good job.'
       end
       
     end

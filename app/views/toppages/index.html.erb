@@ -1,7 +1,7 @@
 <!--topage画面-->
 
 <% if logged_in? %>
-    <%= render 'lists/lists', lists: @lists, list: @list, total: @total %>
+    <%= render 'lists/lists', lists: @lists, list: @list, incomes: @incomes, total: @total, expense_total: @expense_total, income_total: @income_total %>
 <% else %>
 <div>
     <div class="text-center">
