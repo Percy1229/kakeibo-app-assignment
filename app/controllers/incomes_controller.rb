@@ -1,11 +1,48 @@
 class IncomesController < ApplicationController
   before_action :require_user_logged_in
   before_action :correct_user, only: [:destroy];
+  require "date"
   
    #収入のCRUD
   
   def checker #収入が103万円を超えているかを確認できるようにする
-    @incomes = current_user.incomes.order(id: :desc).page(params[:page])
+    if logged_in?
+      
+      @order = current_user.incomes.order(id: :desc).page(params[:page])
+      
+      @d = Date.today #今年のみ取得する
+      @incomes = current_user.incomes.all
+      
+      #これまで稼いだお金の合計
+      @all_money = current_user.incomes.all.sum(:income)
+      @result_with_period = @all_money.to_s(:delimited) #カンマを入れる -> 100,000
+      
+      #これから稼ぎそうなお金　ボタン押すと計算してオーバーするか教えてくれる(追加予定？)
+
+      
+      #いくらで超えるか(追加予定？)
+      
+      
+      
+      #103万円 - 稼いだお金(今年) = reseult
+      @total = 0;
+      @incomes.each do |income|
+        if @d.year == income.date.year && income.source != "others" #今年と登録された年が同じ && 収入源がおこづかいなどではない
+          @total += income.income #合計値を計算する
+        end
+      end
+      @result = 1030000 - @total 
+      
+    　#結果に応じてメッセージを表示させる
+      if @result <= 0  
+        @comment = "Sorry, your income has already been over"
+      elsif @result <= 100000
+        @comment = "Your income almost reaches to 1,030,000. You should arrange your job."
+      else 
+        @comment = "Your income is safe. Good job."
+      end
+      
+    end
   end
   
   def new
@@ -26,7 +63,9 @@ class IncomesController < ApplicationController
   end
   
   def edit
-    @income = current_user.incomes.find(params[:id])
+    if logged_in?
+      @income = current_user.incomes.find(params[:id])
+    end
   end
 
   def update

@@ -1,5 +1,5 @@
 <!--学生が収入が税金を超えているかの確認する画面-->
-<h1>1,030,000 yen No Kabe Checker</h1>
+<h1>1,030,000 yen No Kabe Checker in <%= @d.year %></h1>
 <p>
     Japanese Gorvernment lavies the tax on students when their incomes get over 1,030,000 yen.
 </p>
@@ -7,9 +7,16 @@
     This checker helps students to prevent their incomes from the upper limit.
 </p>
 <ul>
-    <% @incomes.each do |income| %>
-    <li><%= income.date %></li>
+    <% @order.each do |income| %>
+    <li><%= income.date.year %></li>
     <li><%= income.source %></li>
     <li><%= income.income %></li>
     <% end %>
+    <p>Your total is ¥<%= @result_with_period %></p>
+    <p><%= @comment %></p>
+    
+    <p>If you got more income, please <%= link_to "Register income", new_income_path %></p>
+    
 </ul>
+
+
