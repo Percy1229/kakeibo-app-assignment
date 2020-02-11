@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       flash[:success] = 'Logged in'
       redirect_to root_url
     else
-      flash[:danger] = 'Failed to log in'
+      flash.now[:danger] = 'Failed to log in'
       render :new
     end
   end

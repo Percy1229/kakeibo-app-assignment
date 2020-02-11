@@ -16,7 +16,7 @@ class ListsController < ApplicationController
       flash[:success] = 'added successfully'
       redirect_to root_url
     else
-      flash[:danger] = 'Failed to add'
+      flash.now[:danger] = 'Failed to add'
       render :new
     end
   end
@@ -31,7 +31,7 @@ class ListsController < ApplicationController
       flash[:success] = 'updated successfully'
       redirect_to root_path
     else
-      flash[:danger] = 'failed to update'
+      flash.now[:danger] = 'failed to update'
       render :edit
     end
   end
