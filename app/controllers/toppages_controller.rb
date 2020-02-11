@@ -1,4 +1,7 @@
 class ToppagesController < ApplicationController
+  
+  #最初の画面
+  
   def index
     if logged_in?
       @expense = current_user.lists.all

@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  
+  #ログイン・ログアウト機能
+  
   def new
   end
 
