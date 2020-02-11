@@ -1,9 +1,9 @@
 class ListsController < ApplicationController
   before_action :require_user_logged_in
   before_action :correct_user, only: [:destroy]
- 
- 　#支出を登録するCRUD
   
+ #支出を登録するCRUD
+ 
   def new
     if logged_in?
       @list = current_user.lists.build

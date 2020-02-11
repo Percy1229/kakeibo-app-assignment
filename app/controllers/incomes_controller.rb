@@ -33,7 +33,7 @@ class IncomesController < ApplicationController
       end
       @result = 1030000 - @total 
       
-    　#結果に応じてメッセージを表示させる
+      #結果に応じてメッセージを表示させる
       if @result <= 0  
         @comment = "Sorry, your income has already been over"
       elsif @result <= 100000
