@@ -2,7 +2,23 @@
 
 <% if logged_in? %>
 <!--ここに自分の情報を載せる-->
-    <p>Total Balance: ¥<%= @total %></p>
+    <div class="container text-center">
+    <p><%= @d %></p>
+    <p>Name: <%= @user %></p>
+
+    <div class="row">
+        <p class="col-4">Income</p>
+        <p class="col-4">Expense</p>
+        <p class="col-4">Total</p>
+    </div>
+     <div class="row">
+        <p class="offset-1 col-2">¥<%= @income_str %></p>
+        <p class="col-2">-</p>
+        <p class="col-2">¥<%= @expense_str %></td>
+        <p class="col-2">=</p>
+        <p class="col-2">¥<%= @total %></p>
+    </div>
+</div>
 
 <ul class="nav nav-tabs nav-justified">
     <li class="nav-item">
