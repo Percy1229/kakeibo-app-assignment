@@ -64,10 +64,10 @@ class IncomesController < ApplicationController
   end
 
   def update
-    @income = income.find(params[:id])
+    @income = current_user.incomes.find(params[:id])
     if @income.update(income_params)
       flash[:success] = 'updated successfully'
-      redirect_to root_url
+      redirect_to toppages_income_path
     else
       flash.now[:danger] = 'failed to update'
       render :edit
