@@ -5,7 +5,11 @@ class ToppagesController < ApplicationController
     if logged_in?
       @d = Date.today
       @user = current_user.name
+      @goal = current_user.goal
       @lists = current_user.lists.order("date DESC").page(params[:page]).per(5)
+      
+    
+      
       @expense_total = current_user.lists.sum(:expense)
       @expense_str = @expense_total.to_s(:delimited)
       @income_total = current_user.incomes.sum(:income)
@@ -18,8 +22,9 @@ class ToppagesController < ApplicationController
   def income 
       @d = Date.today
       @user = current_user.name
+      @goal = current_user.goal
       @incomes = current_user.incomes.order("date DESC").page(params[:page]).per(5)
-     @expense_total = current_user.lists.sum(:expense)
+      @expense_total = current_user.lists.sum(:expense)
       @expense_str = @expense_total.to_s(:delimited)
       @income_total = current_user.incomes.sum(:income)
       @income_str = @income_total.to_s(:delimited)

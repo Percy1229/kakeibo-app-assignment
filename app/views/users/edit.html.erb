@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row">
-    <h1>Profile</h1>
     <div class="col-sm-6 offset-sm-3">
+    <h1>Profile</h1>
         
 <%= form_with(model: @user, local: true) do |f| %>
 <%= render 'layouts/error_messages', model: f.object %>
@@ -21,7 +21,7 @@
     <%= f.text_field :goal, class: 'form-control'%>
 </div>
 
-<%= f.submit 'POST AGAIN', class: 'btn button btn-block' %>
+<%= f.submit 'update', class: 'btn button btn-block' %>
 
 <% end %>
 </div>
