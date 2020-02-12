@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_154759) do
+ActiveRecord::Schema.define(version: 2020_02_12_035519) do
 
   create_table "incomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "income"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_154759) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "goal"
   end
 
   add_foreign_key "incomes", "users"
