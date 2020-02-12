@@ -1,14 +1,7 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:show]
+  before_action :require_user_logged_in, only: [:edit]
   
   # ユーザの登録
-  
-  def index
-  end
-
-  def show
-     @user = User.find(params[:id])
-  end
 
   def new
     @user = User.new
@@ -21,9 +14,24 @@ class UsersController < ApplicationController
       flash[:success] = 'signed up'
       redirect_to root_url
     else 
-      flash.now[:danger] = 'Failed to sign up'
+      flash.now[:danger] = 'failed to sign up'
       render :new
     end
+  end
+  
+  def edit
+      @user = User.find(params[:id])
+  end
+  
+  def update
+      @user = User.find(params[:id])
+      if @user.update(user_params)
+        flash[:success] = 'updated successfully'
+  
+      else 
+        flash.now[:danger] = 'failed to update'
+        :edit 
+      end
   end
   
   private 

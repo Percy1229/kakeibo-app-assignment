@@ -1,0 +1,22 @@
+<div class="profile-edit container">
+<div class="row">
+    <h1>Profile</h1>
+    <div class="col-sm-6 offset-sm-3">
+     <%= form_with(model: @user, local: true) do |f| %>
+
+<div class="form-group">
+    <%= f.label :name, 'NAME' %>
+    <%= f.text_field :name, class: 'form-control'%>
+</div>
+
+<div class="form-group">
+    <%= f.label :email, 'EMAIL' %>
+    <%= f.text_field :email, class: 'form-control'%>
+</div>
+
+<%= f.submit 'Update', class: 'btn button btn-block btn-primary' %>
+
+<% end %>
+</div>
+</div>
+</div>

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   
   #ユーザの作成
   get 'signup', to: 'users#new'
-  resources :users, only: [:show, :new, :create]
+  resources :users, only: [:edit, :new, :create, :update]
   
   # #費用のCRUD
   resources :lists, only: [:new, :create, :edit, :update, :destroy]

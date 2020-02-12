@@ -9,31 +9,38 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
 <% if logged_in? %>
-       <li class="dropdown nav-item">
-			<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Income</a>
+      <li class="dropdown nav-item">
+		  	<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Income</a>
 			    <ul class="dropdown-menu dropdown-menu-right">
-					<li class="dropdown-item">
-                        <%= link_to 'Register', new_income_path %>
-                    </li>
-                    <li class="dropdown-item">
-                        <%= link_to '103 No Kabe Checker', incomes_checker_path %>
-                    </li>
-		        </ul>
-		</li>
+					  <li class="dropdown-item">
+                <%= link_to 'Register', new_income_path %>
+            </li>
+            <li class="dropdown-item">
+                <%= link_to '103 No Kabe Checker', incomes_checker_path %>
+            </li>
+		      </ul>
+		  </li>
 
-        <li class="dropdown nav-item">
+    <li class="dropdown nav-item">
 			<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Expenses</a>
 				<ul class="dropdown-menu dropdown-menu-right">
 					<li class="dropdown-item">
-                      <%= link_to 'Register', new_list_path %>
-                    </li>
+            <%= link_to 'Register', new_list_path %>
+          </li>
 				</ul>
 		</li>
         
-        
-        <li class="nav-item">
-          <%= link_to 'Logout', logout_path, method: :delete, class: 'nav-link' %>
+    <li class="dropdown nav-item">
+			<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">User</a>
+				<ul class="dropdown-menu dropdown-menu-right">
+				  <li class="dropdown-item">
+          <%= link_to 'My Profile' , edit_user_path(current_user)%>
         </li>
+					<li class="dropdown-item">
+            <%= link_to 'Logout', logout_path, method: :delete%>
+          </li>
+				</ul>
+		</li>
 <% else %>
        <li class="nav-item">
           <%= link_to 'Signup', signup_path, class: 'nav-link' %>
