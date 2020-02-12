@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:edit]
+  before_action :correct_user, only: [:update]
   
   # ユーザの登録
 
@@ -39,5 +40,10 @@ class UsersController < ApplicationController
   def user_params 
     params.require(:user).permit(
       :name, :email, :goal, :password, :password_confirmation)
+  end
+  
+  def correct_user 
+    @list = current_user.lists.find_by(id: params[:id]) 
+    redirect_to root_url unless @list
   end
 end

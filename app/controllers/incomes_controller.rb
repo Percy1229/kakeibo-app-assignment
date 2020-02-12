@@ -1,5 +1,5 @@
 class IncomesController < ApplicationController
-  before_action :require_user_logged_in
+  before_action :require_user_logged_in, only: [:checker, :new, :edit]
   before_action :correct_user, only: [:destroy, :update]
   require "date"
   
