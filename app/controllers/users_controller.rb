@@ -27,10 +27,10 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       if @user.update(user_params)
         flash[:success] = 'updated successfully'
-        redirect_to root_url
+        render :edit
       else 
         flash.now[:danger] = 'failed to update'
-        :edit 
+        render :edit 
       end
   end
   

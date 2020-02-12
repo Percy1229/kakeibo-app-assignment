@@ -8,7 +8,7 @@ class User < ApplicationRecord
                    format: { with: /\A[A-Za-z0-9\s]*\z/, allow_blank: true }
   
   has_secure_password
-  validates :password, presence: true, length: { in:6..16 }
+
 
   has_many :lists
   has_many :incomes
