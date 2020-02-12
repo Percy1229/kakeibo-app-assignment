@@ -14,20 +14,35 @@
 
 <div class="form-group">
     <%= f.label :item_name, 'Item' %>
-    <%= f.text_field :item_name, class: 'form-control'%>
+    <%= f.text_field :item_name, class: 'form-control', placeholder: "Enter the item name"%>
+</div>
+
+<div class="form-group">
+    <%= f.label :category, 'Category' %>
+    <%= f.select :category, 
+    [["unclassifed", "unclassifed"], #未分類
+    ["utensil", "utensil"], #生活用品
+    ["utility(water/heat)", "utility"], #水道光熱費
+    ["hobby", "hobby"], #趣味・娯楽
+    ["entertainment", "entertainment"], #交際費
+    ["transportation", "transportation"], #交通費
+    ["fashion", "fashion"], ["food", "food"], #食費
+    ["phone", "phone"], #通信費
+    ["Others", "others"]], #その他
+    :prompt => "Select category" %>
 </div>
 
 <div class="form-group">
     <%= f.label :expense, 'Expense' %>
-    <%= f.number_field :expense, class: 'form-control', placeholder: "Enter your expense" %>
+    <%= f.number_field :expense, class: 'form-control', placeholder: "Enter the expense" %>
 </div>
 
 <div class="form-group">
     <%= f.label :place, 'Place' %>
-    <%= f.text_field :place, class: 'form-control', placeholder: "Enter place" %>
+    <%= f.text_field :place, class: 'form-control', placeholder: "Enter the place" %>
 </div>
 
-<%= f.submit 'POST', class: 'btn button btn-block' %>
+<%= f.submit 'POST', class: 'btn button btn-block btn-primary' %>
 
 <% end %>
 </div>

@@ -50,7 +50,7 @@ class IncomesController < ApplicationController
     @income = current_user.incomes.build(income_params)
     if @income.save
       flash[:success] = 'added successfully'
-      redirect_to root_url
+      redirect_to toppages_income_path
     else
       flash.now[:danger] = 'Failed to add'
       render :new
