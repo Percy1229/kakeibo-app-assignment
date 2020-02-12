@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: Kakeibo-app_production
   username: Kakeibo-app
   password: <%= ENV['KAKEIBO-APP_DATABASE_PASSWORD'] %>
