@@ -1,13 +1,94 @@
 // Place all the styles related to the toppages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//Main color 
+  $red: #f0134d;
+  $sky: #40bfc1;
+  $blue: #3a6daf;
+  $orange: #ff6f5e;
+  $white: #f5f0e3;
+  $pink: #ffd5ec;
+  
+  
+//toppage top
+.date {
+  background: $blue;
+  text-align: center;
+  color: #fff;
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.page-top {
+  background: $white;
+  margin-bottom: 2rem;
+  padding-top: 0.5rem;
+  .goal {
+    padding: .5rem 0;
+    background: #fff;
+  }
+  .name {
+    padding-top: .5rem;
+    text-align: left;
+    font-size: 1.3rem;
+    margin-bottom: 0;
+  }
+
+.card {
+  width: 25%;
+  display: inline-block;
+    .card-header {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 0;
+    }
+    .income {
+      background-color: $sky;
+    }
+    .expense {
+      background-color: $red;
+    }
+    .total {
+      background-color: $orange;
+    }
+    .card-body {
+      // background-color: $white;
+    }
+    .card-text {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+
+.symbol {
+  width: 10%;
+  font-size: 1.3rem;
+  display: inline-block;
+  padding-bottom: 2rem;
+}
+
 table{
+  margin: 2rem auto;
   border-spacing: 5px;
 }
+
 th, td{
   padding: 5px;
   text-align: center;
 }
 
+//expense table
+.expense-th {
+ background: #fa9996;
+ color: #fff;
+}
 
-
+//income table 
+.income-th {
+  background-color: $sky;
+  color: #fff;
+}

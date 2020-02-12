@@ -2,40 +2,59 @@
 
 <% if logged_in? %>
 <!--ここに自分の情報を載せる-->
-    <div class="container text-center">
-    <p><%= @d %></p>
-    <p>Name: <%= @user %></p>
-    <p>Goal: <%= @goal %></p>
-
-    <div class="row">
-        <p class="col-4">Income</p>
-        <p class="col-4">Expense</p>
-        <p class="col-4">Total Balance</p>
+<div class="date">
+    <h2><%= @d %></h2>
+</div>
+    
+<div class="container text-center page-top">
+    
+     <div class="goal">
+        <h3>GOAL</h3>
+        <hr>
+        <h2><%= @goal %></h2>
     </div>
-     <div class="row">
-        <p class="offset-1 col-2">¥<%= @income_str %></p>
-        <p class="col-2">-</p>
-        <p class="col-2">¥<%= @expense_str %></td>
-        <p class="col-2">=</p>
-        <p class="col-2">¥<%= @total %></p>
-    </div>
+    
+    
+        <p class="name"><%= @user %>'s Total</p>
+            <div class="card">
+                <p class="card-header income">Income</p>
+                    <div class="card-body">
+                        <p class="card-text">¥ <%= @income_str %></p>
+                    </div>
+            </div>
+        <p class="symbol"><i class="fas fa-minus"></i></p>
+            <div class="card">
+                <p class="card-header expense">Expense</p>
+                    <div class="card-body">
+                        <p class="card-text">¥ <%= @expense_str %></p>
+                    </div>
+            </div>
+        <p class="symbol"><i class="fas fa-equals"></i></p>
+            <div class="card">
+                <p class="card-header total">Balance</p>
+                    <div class="card-body">
+                        <p class="card-text">¥ <%= @total %></p>
+                    </div>
+            </div>
 </div>
 
 <ul class="nav nav-tabs nav-justified">
     <li class="nav-item">
         <a href="<%= root_url %>" class="nav-link 
         <%= 'active' if current_page?(root_url) %>">
-            Expense
+            Expense List
         </a>
     </li>
     <li class="nav-item">
         <a href="<%= toppages_income_path %>" class="nav-link 
         <%= 'active' if current_page?(toppages_income_path) %>">
-            Income
+            Income List
         </a>
     </li>
 </ul>
-    <%= render 'lists/lists', lists: @lists, list: @list, expense_total: @expense_total %>
+
+        <%= render 'lists/lists', lists: @lists, list: @list, expense_total: @expense_total %>
+
 <% else %>
 <div>
     <div class="text-center">
