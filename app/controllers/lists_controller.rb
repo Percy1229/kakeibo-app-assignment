@@ -44,7 +44,7 @@ class ListsController < ApplicationController
   
   private 
   def list_params
-    params.require(:list).permit(:expense, :place, :item_name, :date)
+    params.require(:list).permit(:expense, :place, :item_name, :date, :category)
   end
   
   def correct_user 
