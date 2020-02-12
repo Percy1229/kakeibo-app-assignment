@@ -20,15 +20,15 @@
 <div class="form-group">
     <%= f.label :category, 'Category' %>
     <%= f.select :category, 
-    [["unclassifed", "unclassifed"],
-    ["utensil", "utensil"],
-    ["utility(water/heat)", "utility"],
-    ["hobby", "hobby"],
-    ["entertainment", "entertainment"],
-    ["transportation", "transportation"], 
-    ["fashion", "fashion"], 
-    ["food", "food"], 
-    ["phone", "phone"], 
+    [["Unclassifed", "unclassifed"],
+    ["Utensil", "utensil"],
+    ["Utility(water/heat)", "utility"],
+    ["Hobby", "hobby"],
+    ["Entertainment", "entertainment"],
+    ["Transportation", "transportation"], 
+    ["Fashion", "fashion"], 
+    ["Food", "food"], 
+    ["Phone", "phone"], 
     ["Others", "others"]], 
     :prompt => "Select category" %>
 </div>
@@ -37,6 +37,7 @@
     <%= f.label :expense, 'Expense' %>
     <%= f.number_field :expense, class: 'form-control', placeholder: "Enter the expense" %>
 </div>
+
 
 <div class="form-group">
     <%= f.label :place, 'Place' %>
@@ -49,3 +50,4 @@
 </div>
 </div>
 </div>
+fw
