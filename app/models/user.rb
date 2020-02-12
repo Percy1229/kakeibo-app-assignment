@@ -6,7 +6,6 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   validates :goal, presence: true, length: { maximum: 50 }, 
                    format: { with: /\A[A-Za-z0-9\s]*\z/, allow_blank: true }
-
   
   has_secure_password
   validates :password, presence: true, length: { in:6..16 }
