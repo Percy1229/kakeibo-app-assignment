@@ -1,15 +1,13 @@
 // メインカラー
-$red: #f0134d;
 $sky: #40bfc1;
 $blue: #3a6daf;
 $orange: #ff6f5e;
 $white: #f5f0e3;
-$pink: #ffd5ec;
 
 //収入登録フォーム
 .income-overall {
      position: relative;
-    margin: 8rem 0;
+    margin: 5rem 0;
     padding: 0 1rem .5rem;
     border: solid 3px $sky;
 
@@ -43,7 +41,7 @@ $pink: #ffd5ec;
 
 .edit-overall {
      position: relative;
-    margin: 4rem 0;
+    margin: 5rem 0;
     padding: 0.5em 1em;
     border: solid 3px $orange;
  
@@ -71,7 +69,6 @@ $pink: #ffd5ec;
 }
 
 //税金確認ページ
-
 .tax-top {
      border-bottom: solid 3px $orange;
      text-align: center;

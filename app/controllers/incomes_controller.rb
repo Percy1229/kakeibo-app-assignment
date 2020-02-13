@@ -56,11 +56,12 @@ class IncomesController < ApplicationController
   
   def new
     if logged_in?
-      @income = current_user.incomes.build
+      @income = current_user.incomes.build #収入の登録
     end
   end
 
   def create
+    #収入の登録
     @income = current_user.incomes.build(income_params)
     if @income.save
       flash[:success] = 'added successfully'
@@ -73,11 +74,12 @@ class IncomesController < ApplicationController
   
   def edit
     if logged_in?
-      @income = current_user.incomes.find(params[:id])
+      @income = current_user.incomes.find(params[:id]) #収入の編集
     end
   end
 
   def update
+    #収入の編集
     @income = current_user.incomes.find(params[:id])
     if @income.update(income_params)
       flash[:success] = 'updated successfully'
@@ -89,6 +91,7 @@ class IncomesController < ApplicationController
   end
   
   def destroy
+    #収入の削除
     @income.destroy
     flash[:success] = 'deleted successfully'
     redirect_back(fallback_location: root_path)
