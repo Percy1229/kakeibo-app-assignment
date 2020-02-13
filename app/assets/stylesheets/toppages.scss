@@ -1,7 +1,3 @@
-// Place all the styles related to the toppages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 //Main color 
   $red: #f0134d;
   $sky: #40bfc1;
@@ -11,7 +7,7 @@
   $pink: #ffd5ec;
   
   
-//toppage top
+//トップページ
 .date {
   background: $blue;
   text-align: center;
@@ -81,13 +77,13 @@ th, td{
   text-align: center;
 }
 
-//expense table
+//費用テーブル
 .expense-th {
  background: #fa9996;
  color: #fff;
 }
 
-//income table 
+//収入テーブル 
 .income-th {
   background-color: $sky;
   color: #fff;

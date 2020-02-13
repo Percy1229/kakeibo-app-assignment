@@ -1,8 +1,8 @@
-<div class="container">
-<div class="row">
-<h1 class="pt-4 pb-2">Edit</h1>
-<div class="col-sm-6 offset-sm-3">
-<%= form_with(model: @list, local: true) do |f| %>
+<!--費用の編集ページ-->
+
+<div class="edit-overall">
+    <span class="edit-title">Edit Expense</span>
+    <%= form_with(model: @list, local: true) do |f| %>
 <%= render 'layouts/error_messages', model: f.object %>
 
 <div class="form-group">
@@ -41,9 +41,10 @@
     <%= f.text_field :place, class: 'form-control', placeholder: 'Enter place' %>
 </div>
 
-<%= f.submit 'POST AGAIN', class: 'btn button btn-block' %>
+<%= f.submit 'EDIT', class: 'btn button btn-block edit-btn' %>
 
 <% end %>
+
 </div>
-</div>
-</div>
+
+

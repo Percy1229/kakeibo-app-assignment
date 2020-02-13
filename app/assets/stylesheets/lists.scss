@@ -1,3 +1,63 @@
-// Place all the styles related to the lists controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//支出登録ページ
+ $red: #f0134d;
+  
+.expense-overall {
+     position: relative;
+    margin: 4rem 0;
+    padding: 0.5em 1em;
+    border: solid 3px $red;
+ 
+    .expense-title {
+    position: absolute;
+    display: inline-block;
+    top: -42px;
+    left: -3px;
+    padding: 20px 20px;
+    height: 30px;
+    line-height: 5px;
+    font-size: 1.5rem;
+    background: $red;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+.form-group {
+    margin: 1.5rem auto;
+}
+.expense-btn {
+    background: $red;
+    color: #fff;
+}
+}
+
+//支出編集ページ
+ $orange: #ff6f5e;
+
+.edit-overall {
+     position: relative;
+    margin: 4rem 0;
+    padding: 0.5em 1em;
+    border: solid 3px $orange;
+ 
+    .edit-title {
+    position: absolute;
+    display: inline-block;
+    top: -42px;
+    left: -3px;
+    padding: 20px 20px;
+    height: 30px;
+    line-height: 5px;
+    font-size: 1.5rem;
+    background: $orange;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+.form-group {
+    margin: 1.5rem auto;
+}
+.edit-btn {
+    background: $orange;
+    color: #fff;
+}
+}

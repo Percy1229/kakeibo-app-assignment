@@ -1,9 +1,8 @@
-<div class="container">
-<div class="row">
-    <div class="col-sm-6 offset-sm-3">
-    <h1>Profile</h1>
-        
-<%= form_with(model: @user, local: true) do |f| %>
+<!--プロフィール編集ページ-->
+
+<div class="user-overall">
+    <span class="user-title">Profile</span>
+    <%= form_with(model: @user, local: true) do |f| %>
 <%= render 'layouts/error_messages', model: f.object %>
 
 <div class="form-group">
@@ -24,9 +23,9 @@
     <%= f.text_field :goal, class: 'form-control'%>
 </div>
 
-<%= f.submit 'update', class: 'btn button btn-block' %>
+<%= f.submit 'update', class: 'btn button btn-block user-btn' %>
 
 <% end %>
+
 </div>
-</div>
-</div>
+        

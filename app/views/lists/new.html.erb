@@ -1,9 +1,8 @@
 <!--支出を登録する画面-->
 
-<div class="content container">
-<div class="row">
-<div class="col-sm-6 offset-sm-3">
-<h1 class="pt-4 pb-2">Expense</h1>
+<div class="expense-overall">
+    <span class="expense-title">Expense</span>
+
 <%= form_with(model: @list, local: true) do |f| %>
 <%= render 'layouts/error_messages', model: f.object %>
 
@@ -49,9 +48,9 @@
     <%= f.text_field :place, class: 'form-control', placeholder: "Enter the place" %>
 </div>
 
-<%= f.submit 'POST', class: 'btn button btn-block btn-primary' %>
+<%= f.submit 'POST', class: 'btn button btn-block expense-btn' %>
 
 <% end %>
+
 </div>
-</div>
-</div>
+

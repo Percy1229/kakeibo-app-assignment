@@ -1,8 +1,10 @@
 <!--ここにindex.htmlと同じコードを書く-->
 
-<div class="date">
+<div class="row">
+    <div class="col-md-6">
+        <div class="date">
         <h2><%= @d %></h2>
-    </div>
+</div>
     
     <div class="container text-center page-top">
     
@@ -36,9 +38,9 @@
         </div>
     
     </div>
-
-
-<ul class="nav nav-tabs nav-justified">
+    </div>
+    <div class="table-list col-md-6">
+    <ul class="nav nav-tabs nav-justified">
     <li class="nav-item">
         <a href="<%= root_url %>" class="nav-link 
         <%= 'active' if current_page?(root_url) %>">
@@ -53,3 +55,9 @@
     </li>
 </ul>
 <%= render 'incomes/income', incomes: @incomes, income_total: @income_total %>
+</div>
+</div>
+
+
+
+

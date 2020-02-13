@@ -1,9 +1,7 @@
-<!--収入を編集する画面-->
-<div class="content container">
-<div class="row">
-<div class="col-sm-6 offset-sm-3">
-<h1 class="pt-4 pb-2">Income</h1>
-<%= form_with(model: @income, local: true) do |f| %>
+<!--収入を編集するページ-->
+<div class="edit-overall">
+    <span class="edit-title">Edit Income</span>
+    <%= form_with(model: @income, local: true) do |f| %>
 <%= render 'layouts/error_messages', model: f.object %>
 
 <div class="form-group">
@@ -21,9 +19,12 @@
     <%= f.text_field :income, class: 'form-control'%>
 </div>
 
-<%= f.submit 'update', class: 'btn button btn-block btn-primary' %>
+<%= f.submit 'EDIT', class: 'btn button btn-block edit-btn' %>
 
 <% end %>
+    
 </div>
-</div>
-</div>
+
+
+
+

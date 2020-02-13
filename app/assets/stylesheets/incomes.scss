@@ -1,3 +1,65 @@
-// Place all the styles related to the incomes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//収入登録フォーム
+$sky: #40bfc1;
+
+.income-overall {
+     position: relative;
+    margin: 8rem 0;
+    padding: 0 1rem .5rem;
+    border: solid 3px $sky;
+
+    .income-title {
+    position: absolute;
+    display: inline-block;
+    top: -42px;
+    left: -3px;
+    padding: 20px 20px;
+    height: 30px;
+    line-height: 5px;
+    font-size: 1.5rem;
+    background: $sky;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+
+    .form-group {
+        margin: 1rem auto 3rem;
+    }
+
+    .income-btn {
+        background: $sky;
+        color: #fff;
+    }
+}
+
+//収入編集ページ
+ $orange: #ff6f5e;
+
+.edit-overall {
+     position: relative;
+    margin: 4rem 0;
+    padding: 0.5em 1em;
+    border: solid 3px $orange;
+ 
+    .edit-title {
+    position: absolute;
+    display: inline-block;
+    top: -42px;
+    left: -3px;
+    padding: 20px 20px;
+    height: 30px;
+    line-height: 5px;
+    font-size: 1.5rem;
+    background: $orange;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+}
+.form-group {
+    margin: 1.5rem auto;
+}
+.edit-btn {
+    background: $orange;
+    color: #fff;
+}
+}

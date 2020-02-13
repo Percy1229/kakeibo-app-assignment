@@ -2,7 +2,9 @@
 
 <% if logged_in? %>
 <!--ここに自分の情報を載せる-->
-<div class="date">
+<div class="row">
+    <div class="col-md-6">
+        <div class="date">
     <h2><%= @d %></h2>
 </div>
     
@@ -38,7 +40,9 @@
             </div>
 </div>
 
-<ul class="nav nav-tabs nav-justified">
+    </div>
+    <div class="col-md-6">
+        <ul class="nav nav-tabs nav-justified">
     <li class="nav-item">
         <a href="<%= root_url %>" class="nav-link 
         <%= 'active' if current_page?(root_url) %>">
@@ -54,6 +58,10 @@
 </ul>
 
         <%= render 'lists/lists', lists: @lists, list: @list, expense_total: @expense_total %>
+
+    </div>
+</div>
+
 
 <% else %>
 <div>
