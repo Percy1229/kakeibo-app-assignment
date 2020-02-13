@@ -1,6 +1,12 @@
-//収入登録フォーム
+// メインカラー
+$red: #f0134d;
 $sky: #40bfc1;
+$blue: #3a6daf;
+$orange: #ff6f5e;
+$white: #f5f0e3;
+$pink: #ffd5ec;
 
+//収入登録フォーム
 .income-overall {
      position: relative;
     margin: 8rem 0;
@@ -54,12 +60,75 @@ $sky: #40bfc1;
     color: #ffffff;
     font-weight: bold;
     border-radius: 5px 5px 0 0;
+    }
+    .form-group {
+        margin: 1.5rem auto;
+    }
+    .edit-btn {
+        background: $orange;
+        color: #fff;
+    }
 }
-.form-group {
-    margin: 1.5rem auto;
+
+//税金確認ページ
+h2 {
+     border-bottom: double 5px $orange;
+     margin: 0 auto;
+     text-align: center;
 }
-.edit-btn {
-    background: $orange;
+
+.explanation {
+    margin: 2rem auto;
+    text-align: center;
+    letter-spacing: .085rem;
+    font-size: 1.3rem;
+}
+  
+.card-header {
     color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
+
+.kabe-103 {
+    background-color: $white;
+    padding: 1rem 0;
+  
+    .card-103 {
+        
+        width: 25%;
+        display:inline-block;
+        text-align: center;
+        
+        .header-103 {
+            background-color: $blue;
+            margin-bottom: 0;
+        }
+         
+        .body-103 {
+            font-size: .8rem;
+        }
+    }
+
+    .symbol {
+        text-align: center;
+        width: 9%;
+        font-size: 1.3rem;
+        display: inline-block;
+        padding-bottom: 2rem;
+    }
+
+    .result-header {
+        color: #fff;
+        background-color: $sky;
+    }
 }
+
+.result-card {
+     margin: 0 auto;
+     width: 80%;
+}
+
+
+
+  

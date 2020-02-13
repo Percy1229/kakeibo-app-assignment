@@ -14,14 +14,15 @@
         <h2><%= @goal %></h2>
     </div>
     
-    
     <p class="name"><%= @user %>'s Total</p>
+    
         <div class="card">
         <p class="card-header income">Income</p>
         <div class="card-body">
             <p class="card-text">¥ <%= @income_str %></p>
         </div>
         </div>
+        
         <p class="symbol"><i class="fas fa-minus"></i></p>
         <div class="card">
         <p class="card-header expense">Expense</p>
@@ -29,6 +30,7 @@
             <p class="card-text">¥ <%= @expense_str %></p>
         </div>
         </div>
+        
         <p class="symbol"><i class="fas fa-equals"></i></p>
         <div class="card">
         <p class="card-header total">Balance</p>
@@ -36,9 +38,10 @@
             <p class="card-text">¥ <%= @total %></p>
         </div>
         </div>
+        
+    </div>
+    </div>
     
-    </div>
-    </div>
     <div class="table-list col-md-6">
     <ul class="nav nav-tabs nav-justified">
     <li class="nav-item">

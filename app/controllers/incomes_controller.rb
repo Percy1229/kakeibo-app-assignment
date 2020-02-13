@@ -15,7 +15,7 @@ class IncomesController < ApplicationController
       
       #これまで稼いだお金の合計
       @all_money = current_user.incomes.all.sum(:income)
-      @result_with_period = @all_money.to_s(:delimited) #カンマを入れる -> 100,000
+      @all_money_with_period = @all_money.to_s(:delimited) #カンマを入れる -> 100,000
       
       #これから稼ぎそうなお金　ボタン押すと計算してオーバーするか教えてくれる(追加予定？)
       
@@ -27,6 +27,7 @@ class IncomesController < ApplicationController
         end
       end
       @result = 1030000 - @total 
+      @result_with_period = @result.to_s(:delimited)
       
       #結果に応じてメッセージを表示させる
       if @result <= 0  

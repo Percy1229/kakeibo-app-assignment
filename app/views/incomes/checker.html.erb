@@ -1,22 +1,83 @@
 <!--学生が収入が税金を超えているかの確認する画面-->
-<h1>1,030,000 yen No Kabe Checker in <%= @d.year %></h1>
-<p>
-    Japanese Gorvernment lavies the tax on students when their incomes get over 1,030,000 yen.
-</p>
-<p>
+<h2>Tax Checker in <%= @d.year %> for students</h2>
+
+<p class="explanation">
+    Japanese Gorvernment lavies the taxes on family member of the student when their incomes get over 1,030,000 yen.<br>
     This checker helps students to prevent their incomes from the upper limit.
 </p>
-<ul>
-    <% @order.each do |income| %>
-    <li><%= income.date.year %></li>
-    <li><%= income.source %></li>
-    <li><%= income.income %></li>
-    <% end %>
-    <p>Your total is ¥<%= @result_with_period %></p>
-    <p><%= @comment %></p>
-    
-    <p>If you got more income, please <%= link_to "Register income", new_income_path %></p>
-    
-</ul>
+
+<h4>¥ 1,030,000の壁</4>
+<h5>(¥ 1,030,000 No Kabe)</h5>
 
 
+<div class="kabe-103">
+    <div class="card card-103">
+  <div class="card-header header-103">
+    Limit
+  </div>
+  <div class="card-body body-103">
+    <p class="card-text">¥ 1,030, 000</p>
+ </div>
+ </div>
+ 
+ <p class="symbol"><i class="fas fa-minus"></i></p>
+ 
+ <div class="card card-103">
+  <div class="card-header header-103">
+    Income
+  </div>
+  <div class="card-body body-103">
+    <p class="card-text">¥<%= @all_money_with_period %></p>
+ </div>
+ </div>
+ 
+ <p class="symbol"><i class="fas fa-equals"></i></p>
+ 
+ <div class="card card-103">
+  <div class="card-header header-103">
+    Balance
+  </div>
+  <div class="card-body body-103">
+    <p class="card-text">¥<%= @result_with_period %></p>
+ </div>
+ </div>
+  
+  <div class="card result-card">
+  <div class="card-header result-header">
+    Result
+  </div>
+  <div class="card-body body-103">
+    <p class="card-text"><%= @comment %></p>
+ </div>
+ </div>
+</div>
+   
+  
+  
+ 
+<p><%= link_to "Register more income", new_income_path %></p>
+    
+
+<p>1,300,000円の壁(勤労学生控除)</p>
+<p>The system allows students to peform their part-time job for a living</p>
+
+
+<div class="card">
+  <div class="card-header">
+   Requirments for the system
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><i class="far fa-check-circle"></i> The income is from work.</li>
+    <li class="list-group-item"><i class="far fa-check-circle"></i> Total incomes under 650,000 yen.</li>
+    <li class="list-group-item"><i class="far fa-check-circle"></i> Others under 100,000 yen.</li>
+    <li class="list-group-item"><i class="far fa-check-circle"></i> Students are in school.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    Caution
+  </div>
+  <div class="card-body">
+    <p class="card-text">Even thoguh you can earn money over 1,030,000 yen, your parents neet to pay tax, 300,000 yen.</p>
+ </div>
