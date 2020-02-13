@@ -8,8 +8,7 @@ class ToppagesController < ApplicationController
       @goal = current_user.goal
       @lists = current_user.lists.order("date DESC").page(params[:page]).per(5)
       
-    
-      
+      #全ての収支計算
       @expense_total = current_user.lists.sum(:expense)
       @expense_str = @expense_total.to_s(:delimited)
       @income_total = current_user.incomes.sum(:income)
