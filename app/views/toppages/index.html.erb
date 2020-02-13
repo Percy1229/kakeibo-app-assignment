@@ -7,34 +7,141 @@
         <div class="date">
     <h2><%= @d %></h2>
 </div>
-    
+
 <div class="container text-center page-top">
     
      <div class="goal">
         <h3>GOAL</h3>
         <h2><%= @goal %></h2>
     </div>
-        <p class="name-total"><%= @user %>'s Total</p>
+        <p class="name-total">Total</p>
             <div class="card">
                 <p class="card-header income">Income</p>
                 <div class="card-body">
-                    <p class="card-text">¥ <%= @income_str %></p>
+                    <p class="card-text">¥<%= @income_str %></p>
                 </div>
             </div>
         <p class="symbol"><i class="fas fa-minus"></i></p>
             <div class="card">
                 <p class="card-header expense">Expense</p>
                 <div class="card-body">
-                    <p class="card-text">¥ <%= @expense_str %></p>
+                    <p class="card-text">¥<%= @expense_str %></p>
                 </div>
             </div>
         <p class="symbol"><i class="fas fa-equals"></i></p>
             <div class="card">
                 <p class="card-header total">Balance</p>
                 <div class="card-body">
-                    <p class="card-text">¥ <%= @total %></p>
+                    <p class="card-text">¥<%= @total %></p>
                 </div>
             </div>
+            
+        <p class="name-total"><%= @d.year %>(others)</p>
+            <div class="card">
+                <p class="card-header income">Income</p>
+                <div class="card-body">
+                    <p class="card-text">
+                        ¥<%= @income_year_oth %><br>
+                        (¥<%= @income_year %>)
+                    </p>
+                </div>
+            </div>
+        <p class="symbol"><i class="fas fa-minus"></i></p>
+            <div class="card">
+                <p class="card-header expense">Expense</p>
+                <div class="card-body">
+                    <p class="card-text">¥<%= @expense_year %>
+                    </p>
+                </div>
+            </div>
+        <p class="symbol"><i class="fas fa-equals"></i></p>
+            <div class="card">
+                <p class="card-header total">Balance</p>
+                <div class="card-body">
+                    <p class="card-text">¥<%= @result_now_oth %><br>
+                        (¥<%= @result_now %>)
+                    </p>
+                </div>
+            </div>
+        
+        <p class="name-total">Average(others)</p>
+            <div class="card">
+                <p class="card-header income">Income</p>
+                <div class="card-body">
+                    <p class="card-text">¥<%= @all_income_average_oth %><br>
+                    (¥<%= @all_income_average %>)
+                    </p>
+                </div>
+            </div>
+        <p class="symbol"><i class="fas fa-minus"></i></p>
+            <div class="card">
+                <p class="card-header expense">Expense</p>
+                <div class="card-body">
+                    <p class="card-text">¥<%= @all_expense_average %>
+                    </p>
+                </div>
+            </div>
+        <p class="symbol"><i class="fas fa-equals"></i></p>
+            <div class="card">
+                <p class="card-header total">Balance</p>
+                <div class="card-body">
+                    <p class="card-text">¥<%= @all_result_average_oth %><br>
+                    (¥<%= @all_result_average %>)
+                    </p>
+                </div>
+            </div>
+            
+        <p class="name-total">All income(others)</p>
+            <div class="card">
+                <p class="card-header income">Total</p>
+                <div class="card-body">
+                    <p class="card-text">¥<%= @income_total_oth %><br>
+                    (¥<%= @income_total %>)
+                    </p>
+                </div>
+            </div>
+        <p class="symbol"><i class="fas fa-divide"></i></i></p>
+            <div class="card">
+                <p class="card-header expense">Times</p>
+                <div class="card-body">
+                    <p class="card-text"><%= @income_count_oth %><br>
+                    (<%= @income_count %>)
+                    </p>
+                </div>
+            </div>
+        <p class="symbol"><i class="fas fa-equals"></i></p>
+            <div class="card">
+                <p class="card-header total">Average</p>
+                <div class="card-body">
+                    <p class="card-text">¥<%= @all_income_average_oth %><br>
+                    (¥<%= @all_income_average %>)
+                    </p>
+                </div>
+            </div>
+            
+    <p class="name-total">Expense <%= @d.year %></p>
+            <div class="card">
+                <p class="card-header income">Expense</p>
+                <div class="card-body">
+                    <p class="card-text">¥<%= @expense_year %></p>
+                </div>
+            </div>
+        <p class="symbol"><i class="fas fa-divide"></i></p>
+            <div class="card">
+                <p class="card-header expense">Times</p>
+                <div class="card-body">
+                    <p class="card-text"><%= @expense_count_now %>
+                    </p>
+                </div>
+            </div>
+        <p class="symbol"><i class="fas fa-equals"></i></p>
+            <div class="card">
+                <p class="card-header total">Average</p>
+                <div class="card-body">
+                    <p class="card-text">¥<%= @expense_average_now %></p>
+                </div>
+            </div> 
+    
 </div>
 
     </div>
@@ -54,7 +161,7 @@
     </li>
 </ul>
 
-        <%= render 'lists/lists', lists: @lists, list: @list, expense_total: @expense_total %>
+        <%= render 'lists/lists', lists: @expenses, list: @list, expense_total: @expense_total %>
 
     </div>
 </div>
