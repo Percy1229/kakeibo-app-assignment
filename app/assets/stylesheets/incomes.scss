@@ -71,9 +71,9 @@ $pink: #ffd5ec;
 }
 
 //税金確認ページ
-h2 {
-     border-bottom: double 5px $orange;
-     margin: 0 auto;
+
+.tax-top {
+     border-bottom: solid 3px $orange;
      text-align: center;
 }
 
@@ -83,6 +83,16 @@ h2 {
     letter-spacing: .085rem;
     font-size: 1.3rem;
 }
+
+.kabe-title {
+    text-align: center;
+    background-color: $orange;
+    color: #fff;
+    padding: 1rem 0;
+    h5 {
+        margin-bottom: 0;
+    }
+}
   
 .card-header {
     color: #fff;
@@ -90,34 +100,45 @@ h2 {
     font-weight: bold;
 }
 
-.kabe-103 {
+.kabe-tax {
     background-color: $white;
     padding: 1rem 0;
-  
-    .card-103 {
-        
-        width: 25%;
-        display:inline-block;
+    margin-bottom: 1.3rem;
+    
+    .current {
+        padding: 1rem 0;
         text-align: center;
+        font-size: 1.5rem;
+        letter-spacing: .1rem;
+    }
+  
+    .balance {
+      text-align:center;
+      .card-tax {
+        display: inline-block;
+        text-align: center;
+        width: 26%;
         
-        .header-103 {
+        .header-tax {
             background-color: $blue;
             margin-bottom: 0;
+           
         }
          
-        .body-103 {
+        .body-tax {
             font-size: .8rem;
         }
     }
 
     .symbol {
         text-align: center;
-        width: 9%;
+        width: 7%;
         font-size: 1.3rem;
         display: inline-block;
         padding-bottom: 2rem;
     }
-
+  }
+  
     .result-header {
         color: #fff;
         background-color: $sky;
@@ -129,6 +150,8 @@ h2 {
      width: 80%;
 }
 
-
+.link-income {
+    padding-bottom: 2rem;
+}
 
   

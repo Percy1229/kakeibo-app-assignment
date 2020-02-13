@@ -8,8 +8,8 @@ class IncomesController < ApplicationController
   def checker #収入が103万円を超えているかを確認できるようにする
     if logged_in?
       
+      @user = current_user.name
       @order = current_user.incomes.order(id: :desc).page(params[:page])
-      
       @d = Date.today #今年のみ取得する
       @incomes = current_user.incomes.all
       
@@ -17,19 +17,19 @@ class IncomesController < ApplicationController
       @all_money = current_user.incomes.all.sum(:income)
       @all_money_with_period = @all_money.to_s(:delimited) #カンマを入れる -> 100,000
       
-      #これから稼ぎそうなお金　ボタン押すと計算してオーバーするか教えてくれる(追加予定？)
-      
-      #103万円 - 稼いだお金(今年) = reseult
+      #今年に登録された収入 && 収入源がおこづかいなどではない場合は、トータル換算する
       @total = 0;
       @incomes.each do |income|
-        if @d.year == income.date.year && income.source != "others" #今年と登録された年が同じ && 収入源がおこづかいなどではない
+        if @d.year == income.date.year && income.source != "others" 
           @total += income.income #合計値を計算する
         end
       end
-      @result = 1030000 - @total 
+      
+      #103万円 - 稼いだお金(今年) = reseult
+      @result = 1030000 - @total #残りの稼げるお金
       @result_with_period = @result.to_s(:delimited)
       
-      #結果に応じてメッセージを表示させる
+      #結果に応じてメッセージを表示
       if @result <= 0  
         @comment = 'Sorry, your income has already been over.'
       elsif @result <= 100000
@@ -38,6 +38,19 @@ class IncomesController < ApplicationController
         @comment = 'Your income is safe. Good job.'
       end
       
+      #130万円の場合
+      @result_130 = 1300000 - @total #残りの稼げるお金
+      @result_130_with_period = @result_130.to_s(:delimited)
+      
+      #結果に応じてメッセージを表示
+      if @result_130 <= 0  
+        @comment_130 = 'Sorry, your income has already been over.'
+      elsif @result_130 <= 100000
+        @comment_130 = 'Your income almost reaches to 1,300,000. You should arrange your job.'
+      else 
+        @comment_130 = 'Your income is safe. Good job.'
+      end
+    
     end
   end
   
