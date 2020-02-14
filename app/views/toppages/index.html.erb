@@ -17,7 +17,7 @@
             <div class="card">
                 <p class="card-header income">Income</p>
                 <div class="card-body">
-                    <p class="card-text">¥<%= @income_str %></p>
+                    <p class="card-text">¥<%= @income_total_str %></p>
                 </div>
             </div>
         <p class="symbol"><i class="fas fa-minus"></i></p>
@@ -40,8 +40,8 @@
                 <p class="card-header income">Income</p>
                 <div class="card-body">
                     <p class="card-text">
-                        ¥<%= @income_year_oth %><br>
-                        (¥<%= @income_year %>)
+                        ¥<%= @income_year_oth_str %><br>
+                        (¥<%= @income_year_str %>)
                     </p>
                 </div>
             </div>
@@ -49,7 +49,7 @@
             <div class="card">
                 <p class="card-header expense">Expense</p>
                 <div class="card-body">
-                    <p class="card-text">¥<%= @expense_year %>
+                    <p class="card-text">¥<%= @expense_year_str %>
                     </p>
                 </div>
             </div>
@@ -94,8 +94,8 @@
             <div class="card">
                 <p class="card-header income">Total</p>
                 <div class="card-body">
-                    <p class="card-text">¥<%= @income_total_oth %><br>
-                    (¥<%= @income_total %>)
+                    <p class="card-text">¥<%= @income_total_oth_str %><br>
+                    (¥<%= @income_total_str %>)
                     </p>
                 </div>
             </div>
@@ -122,7 +122,7 @@
             <div class="card">
                 <p class="card-header income">Expense</p>
                 <div class="card-body">
-                    <p class="card-text">¥<%= @expense_year %></p>
+                    <p class="card-text">¥<%= @expense_year_str %></p>
                 </div>
             </div>
         <p class="symbol"><i class="fas fa-divide"></i></p>

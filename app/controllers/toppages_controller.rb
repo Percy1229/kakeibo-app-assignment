@@ -24,11 +24,6 @@ class ToppagesController < ApplicationController
       @income_total_oth = current_user.incomes.sum(:income)
       @result = @income_total_oth - @expense_total
       
-      #カンマを入れる -> 100,000
-      @expense_str = @expense_total.to_s(:delimited)
-      @income_str = @income_total_oth.to_s(:delimited)
-      @total = @result.to_s(:delimited) 
-      
       #年月日の合計値
       @expense_day = 0
       @expense_month = 0
@@ -54,7 +49,7 @@ class ToppagesController < ApplicationController
       
       #平均支出
       @expense_average_now = 0
-      @expense_average_now = @expense_year / @expense_count_now unless @expense_count_now == 0
+      @expense_average_now = (@expense_year / @expense_count_now).to_s(:delimited) unless @expense_count_now == 0
       
       @income_total = 0
       @income_year = 0
@@ -83,10 +78,10 @@ class ToppagesController < ApplicationController
       end
       
       #今年の合計収支(othersあり)
-      @result_now_oth = @income_year_oth - @expense_year
+      @result_now_oth = (@income_year_oth - @expense_year).to_s(:delimited)
       
       #今年の合計収支(othersなし)
-      @result_now = @income_year - @expense_year
+      @result_now = (@income_year - @expense_year).to_s(:delimited)
       
       #費用全体の平均支出(小数点切り捨て)
       @expense_count = @expenses.count
@@ -94,21 +89,24 @@ class ToppagesController < ApplicationController
       #unless文は割り算のエラー回避に使用
       #全平均支出
       @all_expense_average = 0
-      @all_expense_average = @expense_total / @expense_count unless @expense_count == 0
+      @all_expense_average = (@expense_total / @expense_count).to_s(:delimited) unless @expense_count == 0
       
       #全平均収入(othersあり)
       @all_income_average_oth = 0
-      @all_income_average_oth = @income_total_oth / @income_count_oth unless @income_count_oth == 0
+      @all_income_average_oth = (@income_total_oth / @income_count_oth).to_s(:delimited) unless @income_count_oth == 0
      
       #全平均収入(othersなし)
       @all_income_average = 0
-      @all_income_average = @income_total / @income_count unless @income_count == 0
+      @all_income_average = (@income_total / @income_count).to_s(:delimited) unless @income_count == 0
       
-      #全体の平均収支(othersあり)　使用する予定？
-      # @all_result_average_oth = @all_income_average_oth - @all_expense_average
-     
-      #全体の平均収支(othersなし) 使用する予定？
-      # @all_result_average = @all_income_average - @all_expense_average
+      #カンマを入れる -> 100,000
+      @expense_str = @expense_total.to_s(:delimited)
+      @income_total_str = @income_total.to_s(:delimited)
+      @income_total_oth_str = @income_total_oth.to_s(:delimited)
+      @total = @result.to_s(:delimited) #カンマを入れる -> 100,000
+      @income_year_oth_str = @income_year_oth.to_s(:delimited)
+      @income_year_str = @income_year.to_s(:delimited)
+      @expense_year_str = @expense_year.to_s(:delimited)
     end
   end
   
@@ -133,11 +131,6 @@ class ToppagesController < ApplicationController
       #合計収支(othersあり)
       @result = @income_total_oth - @expense_total
       
-      #カンマを入れる -> 100,000
-      @expense_str = @expense_total.to_s(:delimited)
-      @income_str = @income_total_oth.to_s(:delimited)
-      @total = @result.to_s(:delimited) 
-      
       #年月日の合計値
       @expense_day = 0
       @expense_month = 0
@@ -163,7 +156,7 @@ class ToppagesController < ApplicationController
       
       #平均支出
       @expense_average_now = 0
-      @expense_average_now = @expense_year / @expense_count_now unless @expense_count_now == 0
+      @expense_average_now = (@expense_year / @expense_count_now).to_s(:delimited) unless @expense_count_now == 0
       
       @income_total = 0
       @income_year = 0
@@ -190,11 +183,12 @@ class ToppagesController < ApplicationController
         
       end
       
+      
       #今年の合計収支(othersあり)
-      @result_now_oth = @income_year_oth - @expense_year
+      @result_now_oth = (@income_year_oth - @expense_year).to_s(:delimited)
       
       #今年の合計収支(othersなし)
-      @result_now = @income_year - @expense_year
+      @result_now = (@income_year - @expense_year).to_s(:delimited)
       
       #費用全体の平均支出(小数点切り捨て)
       @expense_count = @expenses.count
@@ -202,26 +196,24 @@ class ToppagesController < ApplicationController
       #unless文は割り算のエラー回避に使用
       #全平均支出
       @all_expense_average = 0
-      @all_expense_average = @expense_total / @expense_count unless @expense_count == 0
+      @all_expense_average = (@expense_total / @expense_count).to_s(:delimited) unless @expense_count == 0
       
       #全平均収入(othersあり)
       @all_income_average_oth = 0
-      @all_income_average_oth = @income_total_oth / @income_count_oth unless @income_count_oth == 0
+      @all_income_average_oth = (@income_total_oth / @income_count_oth).to_s(:delimited) unless @income_count_oth == 0
      
       #全平均収入(othersなし)
       @all_income_average = 0
-      @all_income_average = @income_total / @income_count unless @income_count == 0
-      
-      #全体の平均収支(othersあり) 使用する予定?
-      # @all_result_average_oth = @all_income_average_oth - @all_expense_average
-     
-      #全体の平均収支(othersなし) 使用する予定?
-      # @all_result_average = @all_income_average - @all_expense_average
+      @all_income_average = (@income_total / @income_count).to_s(:delimited) unless @income_count == 0
       
       #カンマを入れる -> 100,000
       @expense_str = @expense_total.to_s(:delimited)
-      @income_str = @income_total_oth.to_s(:delimited)
+      @income_total_str = @income_total.to_s(:delimited)
+      @income_total_oth_str = @income_total_oth.to_s(:delimited)
       @total = @result.to_s(:delimited) #カンマを入れる -> 100,000
+      @income_year_oth_str = @income_year_oth.to_s(:delimited)
+      @income_year_str = @income_year.to_s(:delimited)
+      @expense_year_str = @expense_year.to_s(:delimited)
   end
   
 end
