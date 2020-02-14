@@ -199,19 +199,23 @@ class ToppagesController < ApplicationController
       #費用全体の平均支出(小数点切り捨て)
       @expense_count = @expenses.count
       
+      #unless文は割り算のエラー回避に使用
       #全平均支出
-      # @all_expense_average = @expense_total / @expense_count
+      @all_expense_average = 0
+      @all_expense_average = @expense_total / @expense_count unless @expense_count == 0
       
       #全平均収入(othersあり)
-      # @all_income_average_oth = @income_total_oth / @income_count_oth
+      @all_income_average_oth = 0
+      @all_income_average_oth = @income_total_oth / @income_count_oth unless @income_count_oth == 0
      
-     #全平均収入(othersなし)
-      # @all_income_average = @income_total / @income_count
+      #全平均収入(othersなし)
+      @all_income_average = 0
+      @all_income_average = @income_total / @income_count unless @income_count == 0
       
-      #全体の平均収支(othersあり)
+      #全体の平均収支(othersあり) 使用する予定?
       # @all_result_average_oth = @all_income_average_oth - @all_expense_average
      
-      #全体の平均収支(othersなし)
+      #全体の平均収支(othersなし) 使用する予定?
       # @all_result_average = @all_income_average - @all_expense_average
       
       #カンマを入れる -> 100,000
