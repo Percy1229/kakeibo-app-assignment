@@ -1,4 +1,4 @@
-//Main color 
+//メインカラー 
   $red: #f0134d;
   $sky: #40bfc1;
   $blue: #3a6daf;
@@ -7,7 +7,8 @@
   $pink: #ffd5ec;
   $yellow: #ffcc00;
 
-* {
+// フォント
+body {
   font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',
                 YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', 
 }
@@ -83,10 +84,6 @@
     margin: 0;
   }
 }
-
- 
-
-
 
 // ログイン後
 .date {
