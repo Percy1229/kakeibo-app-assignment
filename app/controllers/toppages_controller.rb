@@ -50,7 +50,6 @@ class ToppagesController < ApplicationController
           
       end
       
-      #平均支出
       @expense_average_now = @expense_year / @expense_count_now
       
       @income_total = 0
@@ -116,11 +115,6 @@ class ToppagesController < ApplicationController
       @incomes = current_user.incomes.order("date DESC").page(params[:page]).per(5)
       @expenses = current_user.lists.all
       
-      #支出の合計
-      @expense_total = current_user.lists.sum(:expense)
-      
-      #全ての合計支出
-      @expense_total = current_user.lists.sum(:expense)
       
       #全ての合計支出
       @expense_total = current_user.lists.sum(:expense)
