@@ -3,9 +3,11 @@
 <div class="row">
     <div class="col-md-6">
         <div class="date">
-            <h2><%= @d %></h2>
-        </div>
-    <div class="container text-center page-top">
+    <h2><%= @d %></h2>
+</div>
+
+<div class="container text-center page-top">
+    
      <div class="goal">
         <h3>GOAL</h3>
         <h2><%= @goal %></h2>
@@ -64,8 +66,8 @@
             <div class="card">
                 <p class="card-header income">Income</p>
                 <div class="card-body">
-                    <p class="card-text">¥<br>
-                    (¥)
+                    <p class="card-text">¥<%= @all_income_average_oth %><br>
+                    (¥<%= @all_income_average %>)
                     </p>
                 </div>
             </div>
@@ -73,7 +75,7 @@
             <div class="card">
                 <p class="card-header expense">Expense</p>
                 <div class="card-body">
-                    <p class="card-text">¥all_expense_average
+                    <p class="card-text">¥all_expense_average 
                     </p>
                 </div>
             </div>
@@ -81,8 +83,8 @@
             <div class="card">
                 <p class="card-header total">Balance</p>
                 <div class="card-body">
-                    <p class="card-text">¥all_result_average_oth<br>
-                    (¥all_result_average)
+                    <p class="card-text">¥all_income_average_oth<br>
+                    (¥all_income_average)
                     </p>
                 </div>
             </div>
@@ -109,8 +111,8 @@
             <div class="card">
                 <p class="card-header total">Average</p>
                 <div class="card-body">
-                    <p class="card-text">¥<br>
-                    (¥all_income_average_oth)
+                    <p class="card-text">¥<%= @all_income_average_oth %><br>
+                    (¥<%= @all_income_average %>)
                     </p>
                 </div>
             </div>
@@ -134,10 +136,11 @@
             <div class="card">
                 <p class="card-header total">Average</p>
                 <div class="card-body">
-                    <p class="card-text">¥></p>
+                    <p class="card-text">¥</p>
                 </div>
-            </div>
+            </div> 
     </div>
+</div>
     
     <div class="table-list col-md-6">
     <ul class="nav nav-tabs nav-justified">
