@@ -98,10 +98,10 @@ class ToppagesController < ApplicationController
       @all_income_average = @income_total / @income_count
       
       #全体の平均収支(othersあり)
-      @all_result_average_oth = @all_income_average_oth - @all_expense_average
+      # @all_result_average_oth = @all_income_average_oth - @all_expense_average
      
       #全体の平均収支(othersなし)
-      @all_result_average = @all_income_average - @all_expense_average
+      # @all_result_average = @all_income_average - @all_expense_average
     end
   end
   
