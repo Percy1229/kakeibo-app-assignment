@@ -9,8 +9,6 @@ class ToppagesController < ApplicationController
       #日付取得
       @d = Date.today
 
-     
-      
       #データ取得
       @user = current_user.name
       @goal = current_user.goal
@@ -89,15 +87,30 @@ class ToppagesController < ApplicationController
       #unless文は割り算のエラー回避に使用
       #全平均支出
       @all_expense_average = 0
-      @all_expense_average = (@expense_total / @expense_count).to_s(:delimited) unless @expense_count == 0
+      @all_expense_average = @expense_total / @expense_count unless @expense_count == 0
+      @all_expense_average_str = @all_expense_average.to_s(:delimited) 
       
       #全平均収入(othersあり)
       @all_income_average_oth = 0
-      @all_income_average_oth = (@income_total_oth / @income_count_oth).to_s(:delimited) unless @income_count_oth == 0
+      @all_income_average_oth = @income_total_oth / @income_count_oth unless @income_count_oth == 0
+      @all_income_average_oth_str = @all_income_average_oth.to_s(:delimited) 
      
       #全平均収入(othersなし)
       @all_income_average = 0
-      @all_income_average = (@income_total / @income_count).to_s(:delimited) unless @income_count == 0
+      @all_income_average = @income_total / @income_count unless @income_count == 0
+      @all_income_average_str = @all_income_average.to_s(:delimited)
+      
+      
+      #全平均収支(othersあり)
+      @all_result_average_oth = 0
+      @all_result_average_oth = @all_income_average_oth - @all_expense_average unless @income_count_oth == 0
+      @all_result_average_oth_str = @all_result_average_oth.to_s(:delimited)
+      
+      #全平均収支(othersなし)
+      @all_result_average = 0
+      @all_result_average = @all_income_average - @all_expense_average unless @income_count_oth == 0
+      @all_result_average_str = @all_result_average.to_s(:delimited)
+      
       
       #カンマを入れる -> 100,000
       @expense_str = @expense_total.to_s(:delimited)
@@ -196,15 +209,29 @@ class ToppagesController < ApplicationController
       #unless文は割り算のエラー回避に使用
       #全平均支出
       @all_expense_average = 0
-      @all_expense_average = (@expense_total / @expense_count).to_s(:delimited) unless @expense_count == 0
+      @all_expense_average = @expense_total / @expense_count unless @expense_count == 0
+      @all_expense_average_str = @all_expense_average.to_s(:delimited) 
       
       #全平均収入(othersあり)
       @all_income_average_oth = 0
-      @all_income_average_oth = (@income_total_oth / @income_count_oth).to_s(:delimited) unless @income_count_oth == 0
+      @all_income_average_oth = @income_total_oth / @income_count_oth unless @income_count_oth == 0
+      @all_income_average_oth_str = @all_income_average_oth.to_s(:delimited) 
      
       #全平均収入(othersなし)
       @all_income_average = 0
-      @all_income_average = (@income_total / @income_count).to_s(:delimited) unless @income_count == 0
+      @all_income_average = @income_total / @income_count unless @income_count == 0
+      @all_income_average_str = @all_income_average.to_s(:delimited)
+      
+      
+      #全平均収支(othersあり)
+      @all_result_average_oth = 0
+      @all_result_average_oth = @all_income_average_oth - @all_expense_average unless @income_count_oth == 0
+      @all_result_average_oth_str = @all_result_average_oth.to_s(:delimited)
+      
+      #全平均収支(othersなし)
+      @all_result_average = 0
+      @all_result_average = @all_income_average - @all_expense_average unless @income_count_oth == 0
+      @all_result_average_str = @all_result_average.to_s(:delimited)
       
       #カンマを入れる -> 100,000
       @expense_str = @expense_total.to_s(:delimited)
