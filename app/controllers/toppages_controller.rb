@@ -15,7 +15,7 @@ class ToppagesController < ApplicationController
       @user = current_user.name
       @goal = current_user.goal
       @incomes = current_user.incomes.all
-      @expenses = current_user.lists.order("date DESC").page(params[:page]).per(5)
+      @expenses = current_user.lists.order("date DESC").page(params[:page]).per(10)
       
       #全ての合計支出
       @expense_total = current_user.lists.sum(:expense)
@@ -118,7 +118,7 @@ class ToppagesController < ApplicationController
       #データ取得
       @user = current_user.name
       @goal = current_user.goal
-      @incomes = current_user.incomes.order("date DESC").page(params[:page]).per(5)
+      @incomes = current_user.incomes.order("date DESC").page(params[:page]).per(10)
       @expenses = current_user.lists.all
       
       
