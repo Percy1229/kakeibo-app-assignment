@@ -8,11 +8,12 @@ class ToppagesController < ApplicationController
       
       #日付取得
       @d = Date.today
-      
-      @user = current_user.name
-      @goal = current_user.goal
+
+     
       
       #データ取得
+      @user = current_user.name
+      @goal = current_user.goal
       @incomes = current_user.incomes.all
       @expenses = current_user.lists.order("date DESC").page(params[:page]).per(5)
       
@@ -52,7 +53,8 @@ class ToppagesController < ApplicationController
       end
       
       
-      # @expense_average_now = @expense_year / @expense_count_now
+      @expense_average_now = 0
+      @expense_average_now = @expense_year / @expense_count_now unless @expense_count_now == 0
       
       @income_total = 0
       @income_year = 0
@@ -156,7 +158,8 @@ class ToppagesController < ApplicationController
       end
       
       #平均支出
-      # @expense_average_now = @expense_year / @expense_count_now
+      @expense_average_now = 0
+      @expense_average_now = @expense_year / @expense_count_now unless @expense_count_now == 0
       
       @income_total = 0
       @income_year = 0
