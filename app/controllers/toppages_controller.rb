@@ -50,7 +50,8 @@ class ToppagesController < ApplicationController
           
       end
       
-      @expense_average_now = @expense_year / @expense_count_now
+      
+      # @expense_average_now = @expense_year / @expense_count_now
       
       @income_total = 0
       @income_year = 0
