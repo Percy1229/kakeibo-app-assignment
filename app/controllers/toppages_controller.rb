@@ -92,7 +92,7 @@ class ToppagesController < ApplicationController
       # @all_expense_average = @expense_total / @expense_count
       
       #全平均収入(othersあり)
-      @all_income_average_oth = @income_total_oth / @income_count_oth
+      # @all_income_average_oth = @income_total_oth / @income_count_oth
      
      #全平均収入(othersなし)
       @all_income_average = @income_total / @income_count
@@ -195,13 +195,13 @@ class ToppagesController < ApplicationController
       @all_expense_average = @expense_total / @expense_count
       
       #全平均収入(othersあり)
-      @all_income_average_oth = @income_total_oth / @income_count_oth
+      # @all_income_average_oth = @income_total_oth / @income_count_oth
      
      #全平均収入(othersなし)
       @all_income_average = @income_total / @income_count
       
       #全体の平均収支(othersあり)
-      @all_result_average_oth = @all_income_average_oth - @all_expense_average
+      # @all_result_average_oth = @all_income_average_oth - @all_expense_average
      
       #全体の平均収支(othersなし)
       @all_result_average = @all_income_average - @all_expense_average
