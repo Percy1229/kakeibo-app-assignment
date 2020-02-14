@@ -1,5 +1,5 @@
 class ToppagesController < ApplicationController
-   before_action :require_user_logged_in, only: [:index, :income] 
+   before_action :require_user_logged_in, only: [:income] 
   
   #最初の画面
   #others = お小遣いやお年玉など

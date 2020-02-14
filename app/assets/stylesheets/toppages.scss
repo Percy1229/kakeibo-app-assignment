@@ -6,8 +6,89 @@
   $white: #f5f0e3;
   $pink: #ffd5ec;
   $yellow: #ffcc00;
+
+* {
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',
+                YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', 
+}
   
-//トップページ
+//トップページログイン前
+.toppage-overall {
+  background-color: #fff;
+  background-image:
+   linear-gradient(180deg, rgba(100, 100, 100, 0) 0%, rgba(100, 100, 100, 0) 98%, #646464 100%);
+  background-size: 100% 2rem;
+  line-height: 2rem;
+  border: solid 1px #e6e6e6;
+  padding: 2em 1rem 1.98rem 1rem;
+  color: #696969;
+  margin: 1rem 0;
+  font-weight: bold;
+  box-shadow: 2px 2px 0 rgba(0,0,0,.1);
+}
+
+.top-title {
+  padding: 1rem 0;
+  font-size: 3.2rem;
+}
+
+.list {
+  width: 70%;
+  margin: 0 auto 1rem;
+  padding: .5rem 1rem;
+  border: solid .2rem $yellow;
+  list-style: none;
+  text-align: left;
+  
+  .table-head {
+    margin: 1rem auto;
+  }
+}
+
+.title {
+  position: relative;
+  display: inline-block;
+  margin: 2rem 0;
+}
+.title:before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  display: inline-block;
+  width: 60px;
+  height: 3px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: $orange;
+  border-radius: 2px;
+}
+
+.box {
+    margin: 1rem auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .22);
+    width: 80%;
+    
+  .box-title {
+    font-size: 1.2rem;
+    background: $blue;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: .05em;
+  }
+  p {
+    padding: 15px 20px;
+    margin: 0;
+  }
+}
+
+ 
+
+
+
+// ログイン後
 .date {
   background: $blue;
   text-align: center;
@@ -21,7 +102,7 @@
 .page-top {
   background: $white;
   margin-bottom: 2rem;
-  padding-top: 0.5rem;
+  padding-top: .5rem;
   .goal {
     margin: 1.5rem 0 3rem;
     background-color: #fff;

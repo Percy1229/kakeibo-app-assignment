@@ -145,32 +145,95 @@
     
     <div class="col-md-6">
         <ul class="nav nav-tabs nav-justified">
-    <li class="nav-item">
-        <a href="<%= root_url %>" class="nav-link 
-        <%= 'active' if current_page?(root_url) %>">
-            Expense List
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="<%= toppages_income_path %>" class="nav-link 
-        <%= 'active' if current_page?(toppages_income_path) %>">
-            Income List
-        </a>
-    </li>
-</ul>
-
+            <li class="nav-item">
+                <a href="<%= root_url %>" class="nav-link 
+                <%= 'active' if current_page?(root_url) %>">
+                    Expense List
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="<%= toppages_income_path %>" class="nav-link 
+                <%= 'active' if current_page?(toppages_income_path) %>">
+                    Income List
+                </a>
+            </li>
+        </ul>
         <%= render 'lists/lists', lists: @expenses, list: @list, expense_total: @expense_total %>
-
     </div>
 </div>
 
-
 <% else %>
-<div>
-    <div class="text-center">
-        <h1>Japanese Kakiebo</h1>
-        <h2>Write Your Daily Expenses in English</h2>
-        <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+<div class="text-center toppage-overall">
+    <h1 class="top-title">Japanese Kakiebo</h1>
+    
+        
+    <div class="about">
+        <h4 class="title">機能・内容</h4>
+        
+
+        <ul class="list">
+            <table class="table-head" border=1>
+        <tr>
+            <td>クライアント</td>
+            <td>Web</td>
+        </tr>
+        <tr>
+            <td>技術</td>
+            <td>Ruby (Ruby on rails)</td>
+        </tr>
+        <td>対象ユーザー層</td>
+        <td>英語学習中の学生・留学生</td>
+    </table>
+            <li>英語でのみ収支登録</li>
+            <li>収入・支出のCRUD機能</li>
+            <li>税金の上限チェック(103/130万円の壁)</li>
+            <li>様々な支出・収入・収支の合計値・平均値</li>
+            <li>簡易的なユーザー登録・編集・ログイン・ログアウト</li>
+        </ul>
+            
+        <h4 class="title">特徴</h4>
+        <div class="box">
+            <h5 class="box-title">英語で登録</h5>
+            <p>
+                自身が外語学生なので、勉強のため日常的に英語のみで収支の登録できる機能を加えました。<br>
+                英語のため、留学生にも比較的利用しやすいようにしました。そのため、一部を除いて全て英語になっています。
+            </p>
+        </div>
+        
+        <div class="box">
+            <h5 class="box-title">税金の上限を簡単確認</h5>
+            <p>
+                多くの学生がアルバイト代が103万円を超えないようにするため、家計簿に登録した収入から確認できるようにしました。<br>
+                留学生にも簡単にわかるよう工夫しています。
+            </p>
+        </div>
+        
+        <div class="box">
+            <h5 class="box-title">様々な合計値・平均値</h5>
+            <p>
+                自分が一回でどれぐらい支出しているのか平均や合計を知りたかったのでまとめました。
+            </p>
+        </div>
+        
+        
+    </div>
+        
+    <h4 class="title">使用方法</h4>
+    <p>
+        ログイン前
+        ユーザー作成 → ログイン
+    </p>
+    <p>
+        ログイン後
+        収支・平均値等の一覧
+        収支の登録・税金チェッカー・ログアウト
+    </p>
+        
+    <div class="caution">
+        <h4 class="title">注意点</h4>
+        <p>
+            対象を英語を使用する人に限定しているため、使う際は、基本的に英語と数字でのみ登録することができます。
+        </p>
     </div>
 </div>
 <% end %>

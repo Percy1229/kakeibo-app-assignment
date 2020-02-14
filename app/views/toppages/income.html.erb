@@ -115,7 +115,6 @@
                     </p>
                 </div>
             </div>
-            
     <p class="name-total">Expense <%= @d.year %></p>
             <div class="card">
                 <p class="card-header income">Expense</p>
@@ -143,23 +142,23 @@
     
     <div class="table-list col-md-6">
     <ul class="nav nav-tabs nav-justified">
-    <li class="nav-item">
-        <a href="<%= root_url %>" class="nav-link 
-        <%= 'active' if current_page?(root_url) %>">
-            Expense List
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="<%= toppages_income_path %>" class="nav-link 
-        <%= 'active' if current_page?(toppages_income_path) %>">
-            Income List
-        </a>
-    </li>
-</ul>
+        <li class="nav-item">
+            <a href="<%= root_url %>" class="nav-link 
+            <%= 'active' if current_page?(root_url) %>">
+                Expense List
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="<%= toppages_income_path %>" class="nav-link 
+                <%= 'active' if current_page?(toppages_income_path) %>">
+                Income List
+            </a>
+        </li>
+    </ul>
 <%= render 'incomes/income', incomes: @incomes, income_total: @income_total %>
+    </div>
 </div>
-</div>
-</div>
+
 
 
 
