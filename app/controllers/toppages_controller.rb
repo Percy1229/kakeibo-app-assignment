@@ -50,36 +50,60 @@ class ToppagesController < ApplicationController
       @expense_average_now = (@expense_year / @expense_count_now).to_s(:delimited) unless @expense_count_now == 0
       
       @income_total = 0
-      @income_year = 0
+      
       @income_year_oth = 0
+      @income_year = 0
+      @income_year_now_oth = 0
+      @income_year_now = 0
+      
       @income_count_oth = 0
       @income_count = 0
+      @income_count_now_oth = 0
+      @income_count_now = 0
       
       @incomes.each do |income|
+  
+        if income.date.year == @d.year
+          #今年の合計収入(othersあり)
+          @income_year_now_oth += income.income 
+          
+          #今年の登録数(otheresあり)
+          @income_count_now_oth += 1 
+        end
+        
+        if income.date.year == @d.year && income.source != "others"
+          #今年の合計収入(othersなし)
+          @income_year_now += income.income 
+          
+          #今年の登録数(otheresなし)
+          @income_count_now += 1
+        end
+      
+        unless income.source == "others"
+        #登録数(othersなし)
+        @income_count += 1 
         
         #全ての合計収入(othersなし) <-> income_total_oth
-        @income_total += income.income unless income.source == "others"
-        
-        #今年の合計収入(othersあり)
-        @income_year_oth += income.income if income.date.year == @d.year
-        
-        #今年の合計収入(othersなし)
-        @income_year += income.income if income.date.year == @d.year && income.source != "others"
-        
+        @income_total += income.income 
+        end
         
         #登録数(othersあり)
         @income_count_oth += 1
-      
-        #登録数(othersなし)
-        @income_count += 1 unless income.source == "others"
-        
       end
       
+      #今年の平均収入(othersあり)
+      @income_average_oth_now = 0
+      @income_average_oth_now = (@income_year_now_oth / @income_count_now_oth).to_s(:delimited) unless @income_count_oth_now == 0
+      
+      #今年の平均収入(othersなし)
+      @income_average_now = 0
+      @income_average_now = (@income_year_now / @income_count_now).to_s(:delimited) unless @income_count_now == 0
+      
       #今年の合計収支(othersあり)
-      @result_now_oth = (@income_year_oth - @expense_year).to_s(:delimited)
+      @result_now_oth = (@income_year_now_oth - @expense_year).to_s(:delimited)
       
       #今年の合計収支(othersなし)
-      @result_now = (@income_year - @expense_year).to_s(:delimited)
+      @result_now = (@income_year_now - @expense_year).to_s(:delimited)
       
       #費用全体の平均支出(小数点切り捨て)
       @expense_count = @expenses.count
@@ -117,8 +141,8 @@ class ToppagesController < ApplicationController
       @income_total_str = @income_total.to_s(:delimited)
       @income_total_oth_str = @income_total_oth.to_s(:delimited)
       @total = @result.to_s(:delimited) #カンマを入れる -> 100,000
-      @income_year_oth_str = @income_year_oth.to_s(:delimited)
-      @income_year_str = @income_year.to_s(:delimited)
+      @income_year_now_oth_str = @income_year_now_oth.to_s(:delimited)
+      @income_year_now_str = @income_year_now.to_s(:delimited)
       @expense_year_str = @expense_year.to_s(:delimited)
     end
   end
@@ -167,41 +191,65 @@ class ToppagesController < ApplicationController
           
       end
       
-      #平均支出
+     #平均支出
       @expense_average_now = 0
       @expense_average_now = (@expense_year / @expense_count_now).to_s(:delimited) unless @expense_count_now == 0
       
       @income_total = 0
-      @income_year = 0
+      
       @income_year_oth = 0
+      @income_year = 0
+      @income_year_now_oth = 0
+      @income_year_now = 0
+      
       @income_count_oth = 0
       @income_count = 0
+      @income_count_now_oth = 0
+      @income_count_now = 0
+      
       @incomes.each do |income|
+  
+        if income.date.year == @d.year
+          #今年の合計収入(othersあり)
+          @income_year_now_oth += income.income 
+          
+          #今年の登録数(otheresあり)
+          @income_count_now_oth += 1 
+        end
+        
+        if income.date.year == @d.year && income.source != "others"
+          #今年の合計収入(othersなし)
+          @income_year_now += income.income 
+          
+          #今年の登録数(otheresなし)
+          @income_count_now += 1
+        end
+      
+        unless income.source == "others"
+        #登録数(othersなし)
+        @income_count += 1 
         
         #全ての合計収入(othersなし) <-> income_total_oth
-        @income_total += income.income unless income.source == "others"
-        
-        #今年の合計収入(othersあり)
-        @income_year_oth += income.income if income.date.year == @d.year
-        
-        #今年の合計収入(othersなし)
-        @income_year += income.income if income.date.year == @d.year && income.source != "others"
-        
+        @income_total += income.income 
+        end
         
         #登録数(othersあり)
         @income_count_oth += 1
-      
-        #登録数(othersなし)
-        @income_count += 1 unless income.source == "others"
-        
       end
       
+      #今年の平均収入(othersあり)
+      @income_average_oth_now = 0
+      @income_average_oth_now = (@income_year_now_oth / @income_count_now_oth).to_s(:delimited) unless @income_count_oth_now == 0
+      
+      #今年の平均収入(othersなし)
+      @income_average_now = 0
+      @income_average_now = (@income_year_now / @income_count_now).to_s(:delimited) unless @income_count_now == 0
       
       #今年の合計収支(othersあり)
-      @result_now_oth = (@income_year_oth - @expense_year).to_s(:delimited)
+      @result_now_oth = (@income_year_now_oth - @expense_year).to_s(:delimited)
       
       #今年の合計収支(othersなし)
-      @result_now = (@income_year - @expense_year).to_s(:delimited)
+      @result_now = (@income_year_now - @expense_year).to_s(:delimited)
       
       #費用全体の平均支出(小数点切り捨て)
       @expense_count = @expenses.count
@@ -233,13 +281,14 @@ class ToppagesController < ApplicationController
       @all_result_average = @all_income_average - @all_expense_average unless @income_count_oth == 0
       @all_result_average_str = @all_result_average.to_s(:delimited)
       
+      
       #カンマを入れる -> 100,000
       @expense_str = @expense_total.to_s(:delimited)
       @income_total_str = @income_total.to_s(:delimited)
       @income_total_oth_str = @income_total_oth.to_s(:delimited)
       @total = @result.to_s(:delimited) #カンマを入れる -> 100,000
-      @income_year_oth_str = @income_year_oth.to_s(:delimited)
-      @income_year_str = @income_year.to_s(:delimited)
+      @income_year_now_oth_str = @income_year_now_oth.to_s(:delimited)
+      @income_year_now_str = @income_year_now.to_s(:delimited)
       @expense_year_str = @expense_year.to_s(:delimited)
   end
   
