@@ -1,4 +1,5 @@
 class ToppagesController < ApplicationController
+   before_action :require_user_logged_in, only: [:index, :income] 
   
   #最初の画面
   #others = お小遣いやお年玉など
@@ -106,7 +107,7 @@ class ToppagesController < ApplicationController
   end
   
   def income 
-    if logged_in?
+
       #日付取得
       @d = Date.today
     
@@ -210,8 +211,6 @@ class ToppagesController < ApplicationController
       @expense_str = @expense_total.to_s(:delimited)
       @income_str = @income_total_oth.to_s(:delimited)
       @total = @result.to_s(:delimited) #カンマを入れる -> 100,000
-    end
-      
-  end 
+  end
   
 end
