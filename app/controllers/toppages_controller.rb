@@ -192,7 +192,7 @@ class ToppagesController < ApplicationController
       @expense_count = @expenses.count
       
       #全平均支出
-      @all_expense_average = @expense_total / @expense_count
+      # @all_expense_average = @expense_total / @expense_count
       
       #全平均収入(othersあり)
       # @all_income_average_oth = @income_total_oth / @income_count_oth
