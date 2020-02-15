@@ -73,7 +73,7 @@ $white: #f5f0e3;
     }
 }
 
-//税金確認ページ
+//税金確認ページ(チェッカー)
 .tax-top {
      border-bottom: solid 3px $orange;
      text-align: center;
@@ -156,4 +156,42 @@ $white: #f5f0e3;
     padding-bottom: 2rem;
 }
 
-  
+//収入検索ページ
+.search-overall {
+    padding: 1rem;
+    margin: 3rem 0;
+    border: .1rem solid $blue;
+
+    h1 {
+     color: $sky;
+     font-weight: bold;  
+     padding: 2rem 0;
+    }
+    .engine {
+        padding-bottom: 2rem;
+        
+        .select-box {
+            margin-bottom: 1rem;
+        }
+        .search-btn {
+            
+            position: relative;
+            display: inline-block;
+            padding: 0.25em 0.5em;
+            text-decoration: none;
+            color: #FFF;
+            background: $sky;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+            text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+        }
+    }
+    
+    h3 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 0;
+        color: $sky;
+        padding-left: 1rem;
+    }
+}

@@ -3,6 +3,8 @@ class ToppagesController < ApplicationController
   
   #最初の画面
   #others = お小遣いやお年玉など
+  #lists == expenses
+  
   def index
     if logged_in?
       
@@ -14,7 +16,7 @@ class ToppagesController < ApplicationController
       @goal = current_user.goal
       @incomes = current_user.incomes.all
       @expenses = current_user.lists.order("date DESC").page(params[:page]).per(10)
-      
+
       #全ての合計支出
       @expense_total = current_user.lists.sum(:expense)
       

@@ -1,0 +1,13 @@
+<!--収入の検索ページ-->
+<div class="search-overall">
+   <h1>Income search</h1>
+    <div class="engine form-group">
+        <%= form_tag(incomes_search_path, method: "get") do %>
+        <%= select_tag(:date, options_for_select(@date), :prompt => "All incomes", class: "select-box form-control")  %>
+        <%= submit_tag "Search", class: "btn search-btn" %>
+        <% end %>
+    </div>
+    
+    <h3>Result</h3>
+    <%= render 'incomes/income', incomes: @incomes, income_total: @income_total %>
+</div>

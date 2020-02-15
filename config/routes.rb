@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   root to: 'toppages#index'
   
+  get "incomes/search"
+  get "expenses/search"
+  
   #ユーザのログイン・ログアウト
   get 'sessions/new'
   post 'sessions/create'
