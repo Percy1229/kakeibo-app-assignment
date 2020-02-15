@@ -160,10 +160,7 @@ $white: #f5f0e3;
 .search-overall {
     padding: 1rem;
     margin: 3rem 0;
-    border: .1rem solid $blue;
-
     h1 {
-     color: $sky;
      font-weight: bold;  
      padding: 2rem 0;
     }
@@ -179,8 +176,7 @@ $white: #f5f0e3;
             display: inline-block;
             padding: 0.25em 0.5em;
             text-decoration: none;
-            color: #FFF;
-            background: $sky;
+            color: #fff;
             border-radius: 4px;
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
             text-shadow: 0 1px 0 rgba(0,0,0,0.2);
@@ -191,7 +187,6 @@ $white: #f5f0e3;
         font-size: 2rem;
         font-weight: bold;
         margin-bottom: 0;
-        color: $sky;
         padding-left: 1rem;
     }
 }

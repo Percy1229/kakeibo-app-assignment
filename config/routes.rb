@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'toppages#index'
   
   get "incomes/search"
-  get "expenses/search"
+  get "lists/search"
   
   #ユーザのログイン・ログアウト
   get 'sessions/new'
