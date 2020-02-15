@@ -9,11 +9,12 @@ class IncomesController < ApplicationController
       
       #dateカラムで検索する
       @incomes = @income.where('date LIKE ?', "%#{params[:date]}%").order("date DESC").page(params[:page]).per(10)
+    
       
       @income_total = 0
    
       #date型をグループ化
-      @date = @income.group(:date).pluck(:date).sort
+      @date = @income.group(:date).pluck(:date)
    end
   
   def checker #収入が103万円を超えているかを確認できるようにする
