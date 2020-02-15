@@ -9,7 +9,6 @@ class ListsController < ApplicationController
       
     #dateカラムで検索する(::textはPostgreSQLのdate型からstring型に変更)
     @expenses = @expense.where('date LIKE ?', "%#{params[:date]}%").order("date DESC").page(params[:page]).per(10)
-
       
     @expense_total = 0
     #結果のトータル収入
