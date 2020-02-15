@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :require_user_logged_in, only: [:new, :edit]
+  before_action :require_user_logged_in, only: [:search, :new, :edit]
   before_action :correct_user, only: [:update, :destroy]
   
  #支出を登録するCRUD
