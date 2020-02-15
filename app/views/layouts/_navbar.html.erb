@@ -1,68 +1,75 @@
 <!--ナビゲーションバー-->
 <header class="mb-4">
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-sm navbar-dark nav-color">
     <a class="navbar-brand" href="/">Japanese Kakeibo</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav">
+    <ul class="navbar-nav">
 <% if logged_in? %>
-      <li class="dropdown nav-item">
-		  	<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Income</a>
-			    <ul class="dropdown-menu dropdown-menu-right">
-					  <li class="dropdown-item">
-                <%= link_to 'Register', new_income_path %>
+    <li class="dropdown nav-item">
+		<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Income</a>
+		<ul class="dropdown-menu dropdown-menu-right nav-color">
+			<li class="dropdown-item nav-color">
+                <%= link_to 'Register', new_income_path, class: 'nav-link' %>
             </li>
-            <li class="dropdown-item">
-                <%= link_to 'List of Incomes', toppages_income_path %>
+            <li class="dropdown-divider"></li>
+            <li class="dropdown-item nav-color">
+                <%= link_to 'List of Incomes', toppages_income_path, class: 'nav-link' %>
             </li>
-            <li class="dropdown-item">
-                <%= link_to 'search', incomes_search_path %>
+            <li class="dropdown-divider"></li>
+            <li class="dropdown-item nav-color">
+                <%= link_to 'search', incomes_search_path, class: 'nav-link' %>
             </li>
-            <li class="dropdown-item">
-                <%= link_to 'Tax Checker', incomes_checker_path %>
+            <li class="dropdown-divider"></li>
+            <li class="dropdown-item nav-color">
+                <%= link_to 'Tax Checker', incomes_checker_path, class: 'nav-link' %>
             </li>
-		      </ul>
-		  </li>
+		</ul>
+	</li>
 
     <li class="dropdown nav-item">
-			<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Expenses</a>
-				<ul class="dropdown-menu dropdown-menu-right">
-					<li class="dropdown-item">
-            <%= link_to 'Register', new_list_path %>
-          </li>
-          <li class="dropdown-item">
-          <%= link_to 'List of Expenses', root_url %>
-        </li>
-        <li class="dropdown-item">
-                <%= link_to 'search', lists_search_path %>
+		<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Expenses</a>
+		<ul class="dropdown-menu dropdown-menu-right nav-color">
+			<li class="dropdown-item nav-color">
+                <%= link_to 'Register', new_list_path, class: 'nav-link' %>
             </li>
-				</ul>
-		</li>
+            <li class="dropdown-divider"></li>
+            <li class="dropdown-item nav-color">
+                <%= link_to 'List of Expenses', root_url, class: 'nav-link' %>
+            </li>
+            <li class="dropdown-divider"></li>
+            <li class="dropdown-item nav-color">
+                <%= link_to 'search', lists_search_path, class: 'nav-link' %>
+            </li>
+		</ul>
+	</li>
         
     <li class="dropdown nav-item">
-			<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">User</a>
-				<ul class="dropdown-menu dropdown-menu-right">
-				  <li class="dropdown-item">
-          <%= link_to 'My Profile' , edit_user_path(current_user)%>
-        </li>
-					<li class="dropdown-item">
-            <%= link_to 'Logout', logout_path, method: :delete %>
-          </li>
-				</ul>
-		</li>
+		<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">User</a>
+		<ul class="dropdown-menu dropdown-menu-right nav-color">
+			<li class="dropdown-item nav-color">
+                <%= link_to 'My Profile' , edit_user_path(current_user), class: 'nav-link' %>
+            </li>
+            <li class="dropdown-divider"></li>
+			<li class="dropdown-item nav-color">
+                <%= link_to 'Logout', logout_path, method: :delete, class: 'nav-link' %>
+            </li>
+		</ul>
+	</li>
+	
 <% else %>
-       <li class="nav-item">
-          <%= link_to 'Signup', signup_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Login', login_path, class: 'nav-link' %>
-        </li>
+    <li class="nav-item">
+        <%= link_to 'Signup', signup_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+        <%= link_to 'Login', login_path, class: 'nav-link' %>
+    </li>
 <% end %>
 
-      </ul>
+    </ul>
     </div>
   </nav>
 </header>
