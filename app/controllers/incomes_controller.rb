@@ -14,7 +14,7 @@ class IncomesController < ApplicationController
       
       #結果のトータル収入
       @incomes.each do |income|
-        @income_total += income.income unless @incomes.count == 0
+        @income_total += income.income 
       end
       
       #date型をグループ化
