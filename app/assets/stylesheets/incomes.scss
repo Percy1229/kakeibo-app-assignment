@@ -190,3 +190,15 @@ $white: #f5f0e3;
         padding-left: 1rem;
     }
 }
+
+.blue-text {
+    color: $sky;
+}
+
+.blue-btn {
+    background-color: $sky;
+}
+
+.blue-border {
+        border: .1rem solid $blue;
+}
