@@ -8,7 +8,7 @@ class IncomesController < ApplicationController
       @income = current_user.incomes
       
       #dateカラムで検索する(::textはPostgreSQLのdate型からstring型に変更)
-      @incomes = @income.where('date LIKE ?', "%#{params[:date]}%").order("date DESC").page(params[:page]).per(10)
+      @incomes = @income.where('date::text LIKE ?', "%#{params[:date]}%").order("date DESC").page(params[:page]).per(10)
 
       @income_total = 0
       
