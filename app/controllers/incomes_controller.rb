@@ -11,12 +11,7 @@ class IncomesController < ApplicationController
       @incomes = @income.where('date LIKE ?', "%#{params[:date]}%").order("date DESC").page(params[:page]).per(10)
       
       @income_total = 0
-      
-      #結果のトータル収入
-      @incomes.each do |income|
-        @income_total += income.income 
-      end
-      
+   
       #date型をグループ化
       @date = @income.group(:date).pluck(:date).sort
    end
