@@ -19,7 +19,7 @@
                 <%= income.source %>
             </td>
              <td>
-                <span>¥</span><%= income.income %>
+                <span>¥</span><%= income.income.to_s(:delimited) %>
             </td>
             <td>
                 <%= link_to "Edit", edit_income_path(income), class: 'btn btn-primary btn-sm' %>

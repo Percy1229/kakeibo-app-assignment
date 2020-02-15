@@ -20,7 +20,7 @@
                 <%= list.item_name %>
             </td>
              <td>
-                <span>¥</span><%= list.expense %>
+                <span>¥</span><%= list.expense.to_s(:delimited) %>
             </td>
              <td>
                 <%= list.place %>

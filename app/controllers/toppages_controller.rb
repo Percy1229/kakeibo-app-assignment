@@ -147,7 +147,7 @@ class ToppagesController < ApplicationController
       @expense_str = @expense_total.to_s(:delimited)
       @income_total_str = @income_total.to_s(:delimited)
       @income_total_oth_str = @income_total_oth.to_s(:delimited)
-      @total = @result.to_s(:delimited) #カンマを入れる -> 100,000
+      @total = @result.to_s(:delimited) 
       @income_year_now_oth_str = @income_year_now_oth.to_s(:delimited)
       @income_year_now_str = @income_year_now.to_s(:delimited)
       @expense_year_str = @expense_year.to_s(:delimited)
@@ -296,7 +296,7 @@ class ToppagesController < ApplicationController
       @expense_str = @expense_total.to_s(:delimited)
       @income_total_str = @income_total.to_s(:delimited)
       @income_total_oth_str = @income_total_oth.to_s(:delimited)
-      @total = @result.to_s(:delimited) #カンマを入れる -> 100,000
+      @total = @result.to_s(:delimited)
       @income_year_now_oth_str = @income_year_now_oth.to_s(:delimited)
       @income_year_now_str = @income_year_now.to_s(:delimited)
       @expense_year_str = @expense_year.to_s(:delimited)
