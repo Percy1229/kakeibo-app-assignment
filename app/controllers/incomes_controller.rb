@@ -41,17 +41,19 @@ class IncomesController < ApplicationController
         end
       end
       
+      @total_str = @total.to_s(:delimited)
+      
       #103万円 - 稼いだお金(今年) = reseult
       @result = 1030000 - @total #残りの稼げるお金
       @result_with_period = @result.to_s(:delimited)
       
       #結果に応じてメッセージを表示
       if @result <= 0  
-        @comment = 'Sorry, your income has already been over.'
+        @message = 'Sorry, your income has already been over.'
       elsif @result <= 100000
-        @comment = 'Your income almost reaches to 1,030,000. You should arrange your job.'
+        @message = 'Your income almost reaches to 1,030,000. You should arrange your job.'
       else 
-        @comment = 'Your income is safe. Good job.'
+        @message = 'Your income is safe. Good job.'
       end
       
       #130万円の場合
@@ -60,11 +62,11 @@ class IncomesController < ApplicationController
       
       #結果に応じてメッセージを表示
       if @result_130 <= 0  
-        @comment_130 = 'Sorry, your income has already been over.'
+        @message_130 = 'Sorry, your income has already been over.'
       elsif @result_130 <= 100000
-        @comment_130 = 'Your income almost reaches to 1,300,000. You should arrange your job.'
+        @message_130 = 'Your income almost reaches to 1,300,000. You should arrange your job.'
       else 
-        @comment_130 = 'Your income is safe. Good job.'
+        @message_130 = 'Your income is safe. Good job.'
       end
     
     end
