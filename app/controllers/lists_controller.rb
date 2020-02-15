@@ -11,7 +11,11 @@ class ListsController < ApplicationController
     @expenses = @expense.where('date LIKE ?', "%#{params[:date]}%").order("date DESC").page(params[:page]).per(10)
 
       
-    @income_total = 0
+    @expense_total = 0
+    #結果のトータル収入
+    @expenses.each do |expense|
+        @expense_total += expense.expense unless @expense.count == 0
+      end
    
     #date型をグループ化
     @date = @expense.group(:date).pluck(:date)
