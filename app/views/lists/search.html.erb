@@ -4,7 +4,12 @@
     <div class="engine form-group">
         <%= form_tag(lists_search_path, method: "get") do %>
         <%= select_tag(:date, options_for_select(@date), :prompt => "All incomes", class: "select-box form-control")  %>
-        <%= submit_tag "Search", class: "btn search-btn red-btn" %>
+        
+        <div class="search-btn red-btn">
+            <i class="fas fa-search-dollar"></i>
+            <%= submit_tag "Search", class: "btn search-btn" %>
+        </div>
+        
         <% end %>
     </div>
     
