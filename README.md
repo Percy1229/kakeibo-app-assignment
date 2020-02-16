@@ -1,24 +1,28 @@
-# README
+# Japanese Kakeibo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+言語: Ruby (Ruby on Rails)
 
-Things you may want to cover:
+データベース言語: PostgreSQL
 
-* Ruby version
+デプロイ環境: heroku
 
-* System dependencies
+#内容
 
-* Configuration
+対象:
+主に英語を学習している学生、家計簿をつけたい日本に来た留学生を対象に製作しました。
 
-* Database creation
+経緯:
+理由として、私自信が留学中にお金を管理するのが大変だったため、日本の留学生も同様の思いをしていると感じたためです。また、英語のみでの対応は英語学習においても役立つと考えたからです。そのため、機能として登録内容は英語、数字のみを許可しています。また、日本でバイトをしている場合は、税金にも注意を向ける必要があります。そこで、残りどのくらいで税金が超えるかを簡単に管理できる機能を作成しました。
 
-* Database initialization
+# 機能
+* 収入のCRUD
 
-* How to run the test suite
+* 簡易的なユーザ登録・ログイン・ログアウト
 
-* Services (job queues, cache servers, search engines, etc.)
+* 学生がバイトなどで稼いだお金が103万円、130万円を超えているかをチェックする機能
 
-* Deployment instructions
+* 英語のみで投稿可能
 
-* ...
+* 集計(全体・月次・今年・平均)
+
+* 収支の検索機能
